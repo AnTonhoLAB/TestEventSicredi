@@ -13,6 +13,14 @@
 		6B5C540F24539119005662E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C540D24539119005662E7 /* Main.storyboard */; };
 		6B5C541124539128005662E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C541024539128005662E7 /* Assets.xcassets */; };
 		6B5C541424539128005662E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C541224539128005662E7 /* LaunchScreen.storyboard */; };
+		6B5C542524551B83005662E7 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C542424551B83005662E7 /* ViewControllerFactory.swift */; };
+		6B5C542724551BD7005662E7 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C542624551BD7005662E7 /* CoordinatorFactory.swift */; };
+		6B5C542924551BFC005662E7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C542824551BFC005662E7 /* Router.swift */; };
+		6B5C542B24551C0F005662E7 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C542A24551C0F005662E7 /* Presentable.swift */; };
+		6B5C542D24551C23005662E7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C542C24551C23005662E7 /* Coordinator.swift */; };
+		6B5C542F24551C37005662E7 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C542E24551C37005662E7 /* BaseCoordinator.swift */; };
+		6B5C543124551C4C005662E7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C543024551C4C005662E7 /* AppCoordinator.swift */; };
+		6B5C543324551C6E005662E7 /* LaunchInstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C543224551C6E005662E7 /* LaunchInstructor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		6B5C541024539128005662E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B5C541324539128005662E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B5C541524539128005662E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B5C542424551B83005662E7 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		6B5C542624551BD7005662E7 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		6B5C542824551BFC005662E7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		6B5C542A24551C0F005662E7 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		6B5C542C24551C23005662E7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6B5C542E24551C37005662E7 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		6B5C543024551C4C005662E7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		6B5C543224551C6E005662E7 /* LaunchInstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInstructor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,87 @@
 		6B5C540624539119005662E7 /* TestSicredi */ = {
 			isa = PBXGroup;
 			children = (
-				6B5C540724539119005662E7 /* AppDelegate.swift */,
+				6B5C542124551B35005662E7 /* Coordinator */,
+				6B5C541F2453985E005662E7 /* Extension */,
+				6B5C541D24539600005662E7 /* Networking */,
+				6B5C541B2453957C005662E7 /* Common */,
+				6B5C541C245395C9005662E7 /* Scene */,
+				6B5C541E24539745005662E7 /* Supp */,
+			);
+			path = TestSicredi;
+			sourceTree = "<group>";
+		};
+		6B5C541B2453957C005662E7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
 				6B5C540924539119005662E7 /* SceneDelegate.swift */,
+				6B5C540724539119005662E7 /* AppDelegate.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		6B5C541C245395C9005662E7 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
 				6B5C540B24539119005662E7 /* ViewController.swift */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		6B5C541D24539600005662E7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		6B5C541E24539745005662E7 /* Supp */ = {
+			isa = PBXGroup;
+			children = (
 				6B5C540D24539119005662E7 /* Main.storyboard */,
 				6B5C541024539128005662E7 /* Assets.xcassets */,
 				6B5C541224539128005662E7 /* LaunchScreen.storyboard */,
 				6B5C541524539128005662E7 /* Info.plist */,
 			);
-			path = TestSicredi;
+			name = Supp;
+			sourceTree = "<group>";
+		};
+		6B5C541F2453985E005662E7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		6B5C542124551B35005662E7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C542224551B3D005662E7 /* Factory */,
+				6B5C542324551B4B005662E7 /* Router */,
+				6B5C542C24551C23005662E7 /* Coordinator.swift */,
+				6B5C542E24551C37005662E7 /* BaseCoordinator.swift */,
+				6B5C543024551C4C005662E7 /* AppCoordinator.swift */,
+				6B5C543224551C6E005662E7 /* LaunchInstructor.swift */,
+			);
+			name = Coordinator;
+			sourceTree = "<group>";
+		};
+		6B5C542224551B3D005662E7 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C542424551B83005662E7 /* ViewControllerFactory.swift */,
+				6B5C542624551BD7005662E7 /* CoordinatorFactory.swift */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
+		6B5C542324551B4B005662E7 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C542824551BFC005662E7 /* Router.swift */,
+				6B5C542A24551C0F005662E7 /* Presentable.swift */,
+			);
+			name = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +226,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B5C542D24551C23005662E7 /* Coordinator.swift in Sources */,
+				6B5C542F24551C37005662E7 /* BaseCoordinator.swift in Sources */,
+				6B5C543124551C4C005662E7 /* AppCoordinator.swift in Sources */,
 				6B5C540C24539119005662E7 /* ViewController.swift in Sources */,
+				6B5C542524551B83005662E7 /* ViewControllerFactory.swift in Sources */,
 				6B5C540824539119005662E7 /* AppDelegate.swift in Sources */,
 				6B5C540A24539119005662E7 /* SceneDelegate.swift in Sources */,
+				6B5C542924551BFC005662E7 /* Router.swift in Sources */,
+				6B5C543324551C6E005662E7 /* LaunchInstructor.swift in Sources */,
+				6B5C542724551BD7005662E7 /* CoordinatorFactory.swift in Sources */,
+				6B5C542B24551C0F005662E7 /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.george.TestSicredi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.george.TestSicredi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
