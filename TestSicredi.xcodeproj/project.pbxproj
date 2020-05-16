@@ -25,6 +25,8 @@
 		6B5C543B245523CD005662E7 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C543A245523CD005662E7 /* EventListViewModel.swift */; };
 		6B5C543D24552F47005662E7 /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C543C24552F47005662E7 /* EventsCoordinator.swift */; };
 		6B5C54402455322E005662E7 /* ViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C543F2455322E005662E7 /* ViewController+Presentable.swift */; };
+		6B5C54422455FDA1005662E7 /* EventListRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C54412455FDA1005662E7 /* EventListRequester.swift */; };
+		6B5C54442455FE16005662E7 /* NetworkingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C54432455FE16005662E7 /* NetworkingState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		6B5C543A245523CD005662E7 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		6B5C543C24552F47005662E7 /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
 		6B5C543F2455322E005662E7 /* ViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Presentable.swift"; sourceTree = "<group>"; };
+		6B5C54412455FDA1005662E7 /* EventListRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRequester.swift; sourceTree = "<group>"; };
+		6B5C54432455FE16005662E7 /* NetworkingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 		6B5C541D24539600005662E7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				6B5C54412455FDA1005662E7 /* EventListRequester.swift */,
+				6B5C54432455FE16005662E7 /* NetworkingState.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B5C542D24551C23005662E7 /* Coordinator.swift in Sources */,
+				6B5C54422455FDA1005662E7 /* EventListRequester.swift in Sources */,
 				6B5C542F24551C37005662E7 /* BaseCoordinator.swift in Sources */,
 				6B5C54362455238F005662E7 /* EventListViewController.swift in Sources */,
 				6B5C543124551C4C005662E7 /* AppCoordinator.swift in Sources */,
@@ -268,6 +275,7 @@
 				6B5C543324551C6E005662E7 /* LaunchInstructor.swift in Sources */,
 				6B5C542724551BD7005662E7 /* CoordinatorFactory.swift in Sources */,
 				6B5C542B24551C0F005662E7 /* Presentable.swift in Sources */,
+				6B5C54442455FE16005662E7 /* NetworkingState.swift in Sources */,
 				6B5C543D24552F47005662E7 /* EventsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
