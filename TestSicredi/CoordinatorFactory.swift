@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+
+protocol CoordinatorFactoryProtocol {
+     func makeListCoordinatorBox(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, viewControllerFactory: ViewControllerFactoryProtocol) -> EventsCoordinator
+}
+
+class CoordinatorFactory: CoordinatorFactoryProtocol {
+    func makeListCoordinatorBox(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, viewControllerFactory: ViewControllerFactoryProtocol) -> EventsCoordinator {
+        let coordinator = EventsCoordinator(router: router, coordinatorFactory: coordinatorFactory, viewControllerFactory: viewControllerFactory)
+        return coordinator
+    }
+}

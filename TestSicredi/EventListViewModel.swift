@@ -1,5 +1,5 @@
 //
-//  Presentable.swift
+//  EventListViewModel.swift
 //  TestSicredi
 //
 //  Created by George Gomes on 16/05/20.
@@ -7,9 +7,3 @@
 //
 
 import Foundation
-
-import UIKit
-
-protocol Presentable {
-    func toPresent() -> UIViewController
-}

@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+import Foundation
+
+fileprivate var userInformationWasShown = true
+
+enum LaunchInstructorProtocol {
+    case list
+    case userInformation
+}
+
+class LaunchInstructor {
+    
+    func configure( userInformationWasShown: Bool = userInformationWasShown) -> LaunchInstructorProtocol {
+        switch (userInformationWasShown) {
+        case (true): return .list
+        case (false): return .userInformation
+        }
+    }
+}

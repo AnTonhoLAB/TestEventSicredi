@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+protocol ViewControllerFactoryProtocol {
+    func instantiateEventListViewController() -> EventListViewController
+}
+
+class ViewControllerFactory: ViewControllerFactoryProtocol {
+    func instantiateEventListViewController() -> EventListViewController {
+           let eventListView = EventListView()
+//           let authRequester = AuthRequester()
+//           let loginUseCase = LoginUseCase(authRequester: authRequester)
+//           let loginViewModel = LoginViewModel(loginUseCase)
+//           let loginVC = LoginViewController(with: loginView, and: loginViewModel)
+           return EventListViewController(with: eventListView)
+       }
+
+}
