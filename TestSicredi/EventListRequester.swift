@@ -7,3 +7,27 @@
 //
 
 import Foundation
+
+class EventListRequester {
+     private var credentials: Credentiable!
+     
+     init(_ credentials: Credentiable?) {
+         if let credentials = credentials {
+             self.credentials = credentials
+         } else {
+             self.credentials = Credentials()
+         }
+     }
+    
+    
+    func getList(completion: @escaping (Result<EventList, NetworkingError>) -> Void) {
+            
+        guard let url =  URL(string: credentials.url + credentials.basePath + credentials.events) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        let completionHandler: (Result<EventList, Error>) -> Void = ResponseBuilder.build(completion: completion)
+        URLSession.shared.dataTask(with: url, completion: completionHandler).resume()
+    }
+}

@@ -13,6 +13,7 @@ enum NetworkingError: Error {
     case fail
     case notFound
     case decodeError
+    case invalidURL
 }
 
 extension NetworkingError {
