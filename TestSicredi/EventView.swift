@@ -7,6 +7,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
+protocol EventViewComponents: UIView {
+    /// To read UI informations
+    var tableViewObservable: Observable<String> { get }
+    /// To change UI informations
+}
 
 class EventView: UIView {
     

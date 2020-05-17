@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import RxSwift
 
 class EventListViewController: UIViewController {
     
     private var eventListView: EventListViewComponents!
+    private var viewModel: EventListViewModel!
     
-    init(with view: EventListViewComponents) {
+    init(with view: EventListViewComponents, viewModel: EventListViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.eventListView = view
+        self.viewModel = viewModel
     }
     
     override func loadView() {
@@ -22,4 +25,9 @@ class EventListViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    override func viewDidLoad() {
+//        let inputs = EventListViewModel.Input(didReloadList: eventListView.t)
+        let outputs = viewModel.transform(input: EventListViewModel.Input())
+    }
 }
