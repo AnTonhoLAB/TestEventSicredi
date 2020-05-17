@@ -71,21 +71,21 @@ extension EventCellView: CodeView {
     func setupConstraints() {
         bannerImageView.snp.makeConstraints { (make) in
             make.top.left.right .equalToSuperview()
-            make.height.equalTo(120)
+            make.height.equalTo(180)
         }
         
         dateLabel.snp.makeConstraints { (make) in
             make.top.equalTo(bannerImageView.snp.bottom).offset(16)
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().inset(16)
-            make.height.equalTo(9)
+            make.height.equalTo(16)
         }
         
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(dateLabel.snp.bottom).offset(8)
             make.left.equalToSuperview().offset(8)
             make.right.equalToSuperview().inset(8)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().inset(10)
             make.height.greaterThanOrEqualTo(22)
         }
     }
