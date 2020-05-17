@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56D85D5191E810FBC2E1B920 /* Pods_TestSicrediTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFA3602FB28091F2A17A895 /* Pods_TestSicrediTests.framework */; };
+		6B558B892457C8C4007C0D63 /* Pods_TestSicredi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7436A2EA71B0A021911623 /* Pods_TestSicredi.framework */; };
+		6B558B922457CF97007C0D63 /* EventListRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558B912457CF97007C0D63 /* EventListRequesterTests.swift */; };
 		6B5C540824539119005662E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C540724539119005662E7 /* AppDelegate.swift */; };
 		6B5C540A24539119005662E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C540924539119005662E7 /* SceneDelegate.swift */; };
 		6B5C540F24539119005662E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C540D24539119005662E7 /* Main.storyboard */; };
@@ -38,7 +41,23 @@
 		6B5C545924561D22005662E7 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C545824561D22005662E7 /* Person.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6B558B842457C575007C0D63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B5C53FC24539119005662E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B5C540324539119005662E7;
+			remoteInfo = TestSicredi;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		05011802461447CBF9F27033 /* Pods-TestSicrediTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSicrediTests.debug.xcconfig"; path = "Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3EB357123087F097E7F53BD1 /* Pods-TestSicredi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSicredi.debug.xcconfig"; path = "Target Support Files/Pods-TestSicredi/Pods-TestSicredi.debug.xcconfig"; sourceTree = "<group>"; };
+		6B558B7F2457C575007C0D63 /* TestSicrediTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSicrediTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B558B832457C575007C0D63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B558B902457CF97007C0D63 /* TestSicrediTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestSicrediTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		6B558B912457CF97007C0D63 /* EventListRequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRequesterTests.swift; sourceTree = "<group>"; };
 		6B5C540424539119005662E7 /* TestSicredi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSicredi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5C540724539119005662E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B5C540924539119005662E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,24 +89,61 @@
 		6B5C545424561C23005662E7 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6B5C545624561D16005662E7 /* Cupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupon.swift; sourceTree = "<group>"; };
 		6B5C545824561D22005662E7 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		95B9CE90D490F622FD772B0F /* Pods-TestSicrediTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSicrediTests.release.xcconfig"; path = "Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests.release.xcconfig"; sourceTree = "<group>"; };
+		BF7436A2EA71B0A021911623 /* Pods_TestSicredi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestSicredi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA3DF5FDA231E6051A8E571C /* Pods-TestSicredi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSicredi.release.xcconfig"; path = "Target Support Files/Pods-TestSicredi/Pods-TestSicredi.release.xcconfig"; sourceTree = "<group>"; };
+		ECFA3602FB28091F2A17A895 /* Pods_TestSicrediTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestSicrediTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6B558B7C2457C575007C0D63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D85D5191E810FBC2E1B920 /* Pods_TestSicrediTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B5C540124539119005662E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B558B892457C8C4007C0D63 /* Pods_TestSicredi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		584A101CD540C3E0C1B244E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EB357123087F097E7F53BD1 /* Pods-TestSicredi.debug.xcconfig */,
+				EA3DF5FDA231E6051A8E571C /* Pods-TestSicredi.release.xcconfig */,
+				05011802461447CBF9F27033 /* Pods-TestSicrediTests.debug.xcconfig */,
+				95B9CE90D490F622FD772B0F /* Pods-TestSicrediTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6B558B802457C575007C0D63 /* TestSicrediTests */ = {
+			isa = PBXGroup;
+			children = (
+				6B558B832457C575007C0D63 /* Info.plist */,
+				6B558B912457CF97007C0D63 /* EventListRequesterTests.swift */,
+				6B558B902457CF97007C0D63 /* TestSicrediTests-Bridging-Header.h */,
+			);
+			path = TestSicrediTests;
+			sourceTree = "<group>";
+		};
 		6B5C53FB24539119005662E7 = {
 			isa = PBXGroup;
 			children = (
 				6B5C540624539119005662E7 /* TestSicredi */,
+				6B558B802457C575007C0D63 /* TestSicrediTests */,
 				6B5C540524539119005662E7 /* Products */,
+				584A101CD540C3E0C1B244E9 /* Pods */,
+				DD8295A8C47B7B527CC7BB7D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				6B5C540424539119005662E7 /* TestSicredi.app */,
+				6B558B7F2457C575007C0D63 /* TestSicrediTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,13 +297,43 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		DD8295A8C47B7B527CC7BB7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF7436A2EA71B0A021911623 /* Pods_TestSicredi.framework */,
+				ECFA3602FB28091F2A17A895 /* Pods_TestSicrediTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6B558B7E2457C575007C0D63 /* TestSicrediTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B558B882457C575007C0D63 /* Build configuration list for PBXNativeTarget "TestSicrediTests" */;
+			buildPhases = (
+				AB6FB1D5817A7F25F534EC69 /* [CP] Check Pods Manifest.lock */,
+				6B558B7B2457C575007C0D63 /* Sources */,
+				6B558B7C2457C575007C0D63 /* Frameworks */,
+				6B558B7D2457C575007C0D63 /* Resources */,
+				2FE278D33369A2C9D2FE472B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B558B852457C575007C0D63 /* PBXTargetDependency */,
+			);
+			name = TestSicrediTests;
+			productName = TestSicrediTests;
+			productReference = 6B558B7F2457C575007C0D63 /* TestSicrediTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6B5C540324539119005662E7 /* TestSicredi */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B5C541824539128005662E7 /* Build configuration list for PBXNativeTarget "TestSicredi" */;
 			buildPhases = (
+				BECF54C19315BF5912411B2D /* [CP] Check Pods Manifest.lock */,
 				6B5C540024539119005662E7 /* Sources */,
 				6B5C540124539119005662E7 /* Frameworks */,
 				6B5C540224539119005662E7 /* Resources */,
@@ -270,6 +357,11 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "George Gomes";
 				TargetAttributes = {
+					6B558B7E2457C575007C0D63 = {
+						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
+						TestTargetID = 6B5C540324539119005662E7;
+					};
 					6B5C540324539119005662E7 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -289,11 +381,19 @@
 			projectRoot = "";
 			targets = (
 				6B5C540324539119005662E7 /* TestSicredi */,
+				6B558B7E2457C575007C0D63 /* TestSicrediTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6B558B7D2457C575007C0D63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B5C540224539119005662E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,7 +406,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FE278D33369A2C9D2FE472B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB6FB1D5817A7F25F534EC69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestSicrediTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BECF54C19315BF5912411B2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestSicredi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		6B558B7B2457C575007C0D63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B558B922457CF97007C0D63 /* EventListRequesterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B5C540024539119005662E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,6 +514,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6B558B852457C575007C0D63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B5C540324539119005662E7 /* TestSicredi */;
+			targetProxy = 6B558B842457C575007C0D63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		6B5C540D24539119005662E7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -362,6 +542,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6B558B862457C575007C0D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05011802461447CBF9F27033 /* Pods-TestSicrediTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TestSicrediTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.george.TestSicrediTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestSicrediTests/TestSicrediTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestSicredi.app/TestSicredi";
+			};
+			name = Debug;
+		};
+		6B558B872457C575007C0D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95B9CE90D490F622FD772B0F /* Pods-TestSicrediTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TestSicrediTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.george.TestSicrediTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestSicrediTests/TestSicrediTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestSicredi.app/TestSicredi";
+			};
+			name = Release;
+		};
 		6B5C541624539128005662E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -478,6 +703,7 @@
 		};
 		6B5C541924539128005662E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EB357123087F097E7F53BD1 /* Pods-TestSicredi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -495,6 +721,7 @@
 		};
 		6B5C541A24539128005662E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA3DF5FDA231E6051A8E571C /* Pods-TestSicredi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -513,6 +740,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6B558B882457C575007C0D63 /* Build configuration list for PBXNativeTarget "TestSicrediTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B558B862457C575007C0D63 /* Debug */,
+				6B558B872457C575007C0D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6B5C53FF24539119005662E7 /* Build configuration list for PBXProject "TestSicredi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
