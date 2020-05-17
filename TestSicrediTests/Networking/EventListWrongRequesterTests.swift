@@ -10,6 +10,9 @@ import XCTest
 import Mockingjay
 
 @testable import TestSicredi
+/*
+    This file contains completely wrong data
+*/
 
 class EventListWrongRequesterTests: XCTestCase {
     var eventListRequester: EventListRequester!
@@ -27,11 +30,6 @@ class EventListWrongRequesterTests: XCTestCase {
     }
 
     func testEventListWithWrongValues() {
-      
-        let wrongUrl = Bundle(for: type(of: self)).url(forResource: "EventListWrongStub", withExtension: "json")!
-        let wrongData = try! Data(contentsOf: wrongUrl)
-        self.eventListRequester = EventListRequester(nil)
-        stub(http(.get, uri: "http://5b840ba5db24a100142dcd8c.mockapi.io/api/events"), http(200, headers: ["Content-Type":"application/json"], download: .content(wrongData)))
       
         let expectation = self.expectation(description: "calls the callback with a resource object")
 

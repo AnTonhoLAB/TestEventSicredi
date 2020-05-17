@@ -11,6 +11,9 @@ import Mockingjay
 
 @testable import TestSicredi
 
+/*
+    This file contains the data as it should be for the server
+*/
 class EventListRequesterTests: XCTestCase {
 
     var eventListRequester: EventListRequester!
@@ -28,8 +31,6 @@ class EventListRequesterTests: XCTestCase {
     }
 
     func testEventListReturn() {
-        
-        
         let expectation = self.expectation(description: "calls the callback with a resource object")
 
         eventListRequester.getList(){(result) in
@@ -45,25 +46,21 @@ class EventListRequesterTests: XCTestCase {
         removeAllStubs()
     }
     
-    func testEventListWithWrongValues() {
+    func testCorrectIten() {
+        let expectation = self.expectation(description: "calls the callback with a resource item")
         
-        let wrongUrl = Bundle(for: type(of: self)).url(forResource: "EventListWrongStub", withExtension: "json")!
-        let wrongData = try! Data(contentsOf: wrongUrl)
-        self.eventListRequester = EventListRequester(nil)
-        stub(http(.get, uri: "http://5b840ba5db24a100142dcd8c.mockapi.io/api/events"), http(200, headers: ["Content-Type":"application/json"], download: .content(wrongData)))
-        
-        let expectation = self.expectation(description: "calls the callback with a resource object")
-
         eventListRequester.getList(){(result) in
             switch result {
-            case .success(let _):
-                XCTFail()
+            case .success(let res):
+                let id = res[0].id
+                XCTAssertEqual(id, "1")
             case .failure(let err):
-                XCTAssertNotNil(err)
+                XCTFail(err.localizedDescription)
             }
             expectation.fulfill()
-       }
-       self.waitForExpectations(timeout: 1.0, handler: .none)
-       removeAllStubs()
+        }
+        self.waitForExpectations(timeout: 1.0, handler: .none)
+        removeAllStubs()
     }
+
 }
