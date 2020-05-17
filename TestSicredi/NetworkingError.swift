@@ -14,3 +14,17 @@ enum NetworkingError: Error {
     case notFound
     case decodeError
 }
+
+extension NetworkingError {
+    init(error: Error){
+        if let error = error as? NetworkingError{
+            self = error
+            return
+        }
+        
+        switch error {
+        default:
+            self = .fail
+        }
+    }
+}
