@@ -29,6 +29,26 @@ class EventListRequesterTests: XCTestCase {
     override func tearDown() {
         self.eventListRequester = nil
     }
+    
+    func testInitWithWrongUrl() {
+        let wrongCredentials = WrongCredentials()
+        let eventListRequester = EventListRequester(wrongCredentials)
+        
+        let expectation = self.expectation(description: "calls the callback with a resource object")
+
+        eventListRequester.getList(){(result) in
+            switch result {
+            case .success(_):
+                XCTFail()
+            case .failure(let err):
+                XCTAssertNotNil(err)
+            }
+            expectation.fulfill()
+        }
+        self.waitForExpectations(timeout: 1.0, handler: .none)
+        removeAllStubs()
+        
+    }
 
     func testEventListReturn() {
         let expectation = self.expectation(description: "calls the callback with a resource object")
@@ -63,4 +83,11 @@ class EventListRequesterTests: XCTestCase {
         removeAllStubs()
     }
 
+}
+
+struct WrongCredentials: Credentiable {
+    var url = "///0ba5db24a100142dcd"
+    var basePath = "//api"
+    var events = "Ç/events"
+    var id = "/%@"
 }
