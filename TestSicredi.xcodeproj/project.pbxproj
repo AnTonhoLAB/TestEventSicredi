@@ -29,6 +29,9 @@
 		6B5C54442455FE16005662E7 /* NetworkingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C54432455FE16005662E7 /* NetworkingState.swift */; };
 		6B5C54462455FEC2005662E7 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C54452455FEC2005662E7 /* NetworkingError.swift */; };
 		6B5C54482455FFBA005662E7 /* NetworkingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C54472455FFBA005662E7 /* NetworkingHelper.swift */; };
+		6B5C544B245608D6005662E7 /* ResponseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C544A245608D6005662E7 /* ResponseBuilder.swift */; };
+		6B5C544E24560A67005662E7 /* URLSession+DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C544D24560A67005662E7 /* URLSession+DataTask.swift */; };
+		6B5C545024560AEB005662E7 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C544F24560AEB005662E7 /* Decoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		6B5C54432455FE16005662E7 /* NetworkingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingState.swift; sourceTree = "<group>"; };
 		6B5C54452455FEC2005662E7 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		6B5C54472455FFBA005662E7 /* NetworkingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelper.swift; sourceTree = "<group>"; };
+		6B5C544A245608D6005662E7 /* ResponseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBuilder.swift; sourceTree = "<group>"; };
+		6B5C544D24560A67005662E7 /* URLSession+DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTask.swift"; sourceTree = "<group>"; };
+		6B5C544F24560AEB005662E7 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +94,10 @@
 		6B5C540624539119005662E7 /* TestSicredi */ = {
 			isa = PBXGroup;
 			children = (
-				6B5C542124551B35005662E7 /* Coordinator */,
-				6B5C541F2453985E005662E7 /* Extension */,
-				6B5C541D24539600005662E7 /* Networking */,
 				6B5C541B2453957C005662E7 /* Common */,
+				6B5C541F2453985E005662E7 /* CommonExtensions */,
+				6B5C542124551B35005662E7 /* Coordinator */,
+				6B5C541D24539600005662E7 /* Networking */,
 				6B5C541C245395C9005662E7 /* Scene */,
 				6B5C541E24539745005662E7 /* Supp */,
 			);
@@ -101,6 +107,7 @@
 		6B5C541B2453957C005662E7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6B5C544F24560AEB005662E7 /* Decoder.swift */,
 				6B5C540924539119005662E7 /* SceneDelegate.swift */,
 				6B5C540724539119005662E7 /* AppDelegate.swift */,
 			);
@@ -118,10 +125,12 @@
 		6B5C541D24539600005662E7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				6B5C54412455FDA1005662E7 /* EventListRequester.swift */,
+				6B5C544C24560A15005662E7 /* Extensions */,
+				6B5C5449245608B5005662E7 /* Requesters */,
 				6B5C54432455FE16005662E7 /* NetworkingState.swift */,
 				6B5C54452455FEC2005662E7 /* NetworkingError.swift */,
 				6B5C54472455FFBA005662E7 /* NetworkingHelper.swift */,
+				6B5C544A245608D6005662E7 /* ResponseBuilder.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -137,12 +146,12 @@
 			name = Supp;
 			sourceTree = "<group>";
 		};
-		6B5C541F2453985E005662E7 /* Extension */ = {
+		6B5C541F2453985E005662E7 /* CommonExtensions */ = {
 			isa = PBXGroup;
 			children = (
 				6B5C543F2455322E005662E7 /* ViewController+Presentable.swift */,
 			);
-			name = Extension;
+			name = CommonExtensions;
 			sourceTree = "<group>";
 		};
 		6B5C542124551B35005662E7 /* Coordinator */ = {
@@ -193,6 +202,22 @@
 				6B5C543724552396005662E7 /* EventList */,
 			);
 			name = Events;
+			sourceTree = "<group>";
+		};
+		6B5C5449245608B5005662E7 /* Requesters */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C54412455FDA1005662E7 /* EventListRequester.swift */,
+			);
+			name = Requesters;
+			sourceTree = "<group>";
+		};
+		6B5C544C24560A15005662E7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C544D24560A67005662E7 /* URLSession+DataTask.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,17 +296,20 @@
 				6B5C54422455FDA1005662E7 /* EventListRequester.swift in Sources */,
 				6B5C54462455FEC2005662E7 /* NetworkingError.swift in Sources */,
 				6B5C542F24551C37005662E7 /* BaseCoordinator.swift in Sources */,
+				6B5C545024560AEB005662E7 /* Decoder.swift in Sources */,
 				6B5C54362455238F005662E7 /* EventListViewController.swift in Sources */,
 				6B5C543124551C4C005662E7 /* AppCoordinator.swift in Sources */,
 				6B5C543B245523CD005662E7 /* EventListViewModel.swift in Sources */,
 				6B5C54402455322E005662E7 /* ViewController+Presentable.swift in Sources */,
 				6B5C542524551B83005662E7 /* ViewControllerFactory.swift in Sources */,
+				6B5C544E24560A67005662E7 /* URLSession+DataTask.swift in Sources */,
 				6B5C540824539119005662E7 /* AppDelegate.swift in Sources */,
 				6B5C540A24539119005662E7 /* SceneDelegate.swift in Sources */,
 				6B5C5439245523B5005662E7 /* EventListView.swift in Sources */,
 				6B5C542924551BFC005662E7 /* Router.swift in Sources */,
 				6B5C543324551C6E005662E7 /* LaunchInstructor.swift in Sources */,
 				6B5C542724551BD7005662E7 /* CoordinatorFactory.swift in Sources */,
+				6B5C544B245608D6005662E7 /* ResponseBuilder.swift in Sources */,
 				6B5C542B24551C0F005662E7 /* Presentable.swift in Sources */,
 				6B5C54442455FE16005662E7 /* NetworkingState.swift in Sources */,
 				6B5C543D24552F47005662E7 /* EventsCoordinator.swift in Sources */,
