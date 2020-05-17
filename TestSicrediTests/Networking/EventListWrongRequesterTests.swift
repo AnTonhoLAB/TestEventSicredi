@@ -19,7 +19,7 @@ class EventListWrongRequesterTests: XCTestCase {
           
     override func setUp() {
         super.setUp()
-        let url = Bundle(for: type(of: self)).url(forResource: "EventListStub", withExtension: "json")!
+        let url = Bundle(for: type(of: self)).url(forResource: "EventListWrongStub", withExtension: "json")!
         let data = try! Data(contentsOf: url)
         self.eventListRequester = EventListRequester(nil)
         stub(http(.get, uri: "http://5b840ba5db24a100142dcd8c.mockapi.io/api/events"), http(200, headers: ["Content-Type":"application/json"], download: .content(data)))
