@@ -1,5 +1,5 @@
 //
-//  EventListRequesterTests.swift
+//  EventListWrongRequesterTests.swift
 //  TestSicrediTests
 //
 //  Created by George Gomes on 17/05/20.
@@ -11,10 +11,9 @@ import Mockingjay
 
 @testable import TestSicredi
 
-class EventListRequesterTests: XCTestCase {
-
+class EventListWrongRequesterTests: XCTestCase {
     var eventListRequester: EventListRequester!
-        
+          
     override func setUp() {
         super.setUp()
         let url = Bundle(for: type(of: self)).url(forResource: "EventListStub", withExtension: "json")!
@@ -27,43 +26,25 @@ class EventListRequesterTests: XCTestCase {
         self.eventListRequester = nil
     }
 
-    func testEventListReturn() {
-        
-        
-        let expectation = self.expectation(description: "calls the callback with a resource object")
-
-        eventListRequester.getList(){(result) in
-            switch result {
-            case .success(let res):
-                XCTAssertNotNil(res)
-            case .failure(let err):
-                XCTFail(err.localizedDescription)
-            }
-            expectation.fulfill()
-        }
-        self.waitForExpectations(timeout: 1.0, handler: .none)
-        removeAllStubs()
-    }
-    
     func testEventListWithWrongValues() {
-        
+      
         let wrongUrl = Bundle(for: type(of: self)).url(forResource: "EventListWrongStub", withExtension: "json")!
         let wrongData = try! Data(contentsOf: wrongUrl)
         self.eventListRequester = EventListRequester(nil)
         stub(http(.get, uri: "http://5b840ba5db24a100142dcd8c.mockapi.io/api/events"), http(200, headers: ["Content-Type":"application/json"], download: .content(wrongData)))
-        
+      
         let expectation = self.expectation(description: "calls the callback with a resource object")
 
         eventListRequester.getList(){(result) in
             switch result {
-            case .success(let _):
+            case .success(_):
                 XCTFail()
             case .failure(let err):
                 XCTAssertNotNil(err)
             }
             expectation.fulfill()
-       }
-       self.waitForExpectations(timeout: 1.0, handler: .none)
-       removeAllStubs()
+        }
+        self.waitForExpectations(timeout: 1.0, handler: .none)
+        removeAllStubs()
     }
 }

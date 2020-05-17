@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Person
 struct Person: Codable {
-    let id, eventID, name, picture: String
+    let id, eventID, name, picture: String?
 
     enum CodingKeys: String, CodingKey {
         case id

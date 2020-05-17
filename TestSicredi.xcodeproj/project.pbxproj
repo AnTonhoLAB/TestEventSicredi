@@ -11,6 +11,10 @@
 		6B558B892457C8C4007C0D63 /* Pods_TestSicredi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7436A2EA71B0A021911623 /* Pods_TestSicredi.framework */; };
 		6B558B922457CF97007C0D63 /* EventListRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558B912457CF97007C0D63 /* EventListRequesterTests.swift */; };
 		6B558B952457D8DF007C0D63 /* EventListStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B558B942457D8DF007C0D63 /* EventListStub.json */; };
+		6B558B972457E89B007C0D63 /* EventListWrongStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B558B962457E89B007C0D63 /* EventListWrongStub.json */; };
+		6B558B992457EE6C007C0D63 /* EventListWrongRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558B982457EE6C007C0D63 /* EventListWrongRequesterTests.swift */; };
+		6B558B9B2457F224007C0D63 /* EventListDiferentValuesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558B9A2457F224007C0D63 /* EventListDiferentValuesTests.swift */; };
+		6B558B9D2457F250007C0D63 /* EventListDiferentValues.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B558B9C2457F250007C0D63 /* EventListDiferentValues.json */; };
 		6B5C540824539119005662E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C540724539119005662E7 /* AppDelegate.swift */; };
 		6B5C540A24539119005662E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C540924539119005662E7 /* SceneDelegate.swift */; };
 		6B5C540F24539119005662E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C540D24539119005662E7 /* Main.storyboard */; };
@@ -60,6 +64,10 @@
 		6B558B902457CF97007C0D63 /* TestSicrediTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestSicrediTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		6B558B912457CF97007C0D63 /* EventListRequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRequesterTests.swift; sourceTree = "<group>"; };
 		6B558B942457D8DF007C0D63 /* EventListStub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EventListStub.json; sourceTree = "<group>"; };
+		6B558B962457E89B007C0D63 /* EventListWrongStub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EventListWrongStub.json; sourceTree = "<group>"; };
+		6B558B982457EE6C007C0D63 /* EventListWrongRequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListWrongRequesterTests.swift; sourceTree = "<group>"; };
+		6B558B9A2457F224007C0D63 /* EventListDiferentValuesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListDiferentValuesTests.swift; sourceTree = "<group>"; };
+		6B558B9C2457F250007C0D63 /* EventListDiferentValues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EventListDiferentValues.json; sourceTree = "<group>"; };
 		6B5C540424539119005662E7 /* TestSicredi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSicredi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5C540724539119005662E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B5C540924539119005662E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,7 +150,11 @@
 			isa = PBXGroup;
 			children = (
 				6B558B912457CF97007C0D63 /* EventListRequesterTests.swift */,
+				6B558B982457EE6C007C0D63 /* EventListWrongRequesterTests.swift */,
+				6B558B9A2457F224007C0D63 /* EventListDiferentValuesTests.swift */,
 				6B558B942457D8DF007C0D63 /* EventListStub.json */,
+				6B558B962457E89B007C0D63 /* EventListWrongStub.json */,
+				6B558B9C2457F250007C0D63 /* EventListDiferentValues.json */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -402,6 +414,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B558B972457E89B007C0D63 /* EventListWrongStub.json in Resources */,
+				6B558B9D2457F250007C0D63 /* EventListDiferentValues.json in Resources */,
 				6B558B952457D8DF007C0D63 /* EventListStub.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,7 +501,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B558B9B2457F224007C0D63 /* EventListDiferentValuesTests.swift in Sources */,
 				6B558B922457CF97007C0D63 /* EventListRequesterTests.swift in Sources */,
+				6B558B992457EE6C007C0D63 /* EventListWrongRequesterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

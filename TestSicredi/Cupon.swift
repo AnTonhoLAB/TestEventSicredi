@@ -10,8 +10,8 @@ import Foundation
 
 // MARK: - Cupon
 struct Cupon: Codable {
-    let id, eventID: String
-    let discount: Int
+    let id, eventID: String?
+    let discount: Int?
 
     enum CodingKeys: String, CodingKey {
         case id

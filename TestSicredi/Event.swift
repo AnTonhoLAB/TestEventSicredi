@@ -10,13 +10,13 @@ import Foundation
 
 // MARK: - EventElement
 struct Event: Codable {
-    let people: [Person]
-    let date: Int
-    let eventDescription: String
-    let image: String
-    let longitude, latitude, price: Double
-    let title, id: String
-    let cupons: [Cupon]
+    let people: [Person]?
+    let date: Int?
+    let eventDescription: String?
+    let image: String?
+    let longitude, latitude, price: Double?
+    let title, id: String?
+    let cupons: [Cupon]?
 
     enum CodingKeys: String, CodingKey {
         case people, date
