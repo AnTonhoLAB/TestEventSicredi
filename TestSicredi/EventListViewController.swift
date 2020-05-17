@@ -9,8 +9,9 @@
 import UIKit
 import RxSwift
 
-class EventListViewController: UIViewController {
+class EventListViewController: UpdatableViewController {
     
+    private let disposeBag: DisposeBag = DisposeBag()
     private var eventListView: EventListViewComponents!
     private var viewModel: EventListViewModel!
     
@@ -26,8 +27,16 @@ class EventListViewController: UIViewController {
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    override func viewDidLoad() {
-//        let inputs = EventListViewModel.Input(didReloadList: eventListView.t)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //        let inputs = EventListViewModel.Input(didReloadList: eventListView.t)
         let outputs = viewModel.transform(input: EventListViewModel.Input())
+        
+        outputs.networkingStatus
+            .map({ (state) -> NetworkingState<Any> in
+            state.toAny()
+            })
+            .drive(rx.loadingState)
+            .disposed(by: disposeBag)
     }
 }
