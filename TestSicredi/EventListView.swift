@@ -18,7 +18,7 @@ class EventListView: UIView, EventListViewComponents {
     lazy var eventListTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: "EventTableViewCell")
-        tableView.estimatedRowHeight = 200
+        tableView.estimatedRowHeight = 177
         tableView.tableFooterView = UIView()
         return tableView
     }()

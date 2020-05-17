@@ -9,15 +9,19 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import SnapKit
 
 protocol EventViewComponents: UIView {
     /// To read UI informations
-    var tableViewObservable: Observable<String> { get }
+    var eventDate: Binder<String?> { get }
+    var eventTitle: Binder<String?> { get }
     /// To change UI informations
 }
 
-class EventCellView: UIView {
+class EventCellView: UIView, EventViewComponents {
+    
+    lazy var eventDate: Binder<String?> = {
+        return self.dateLabel.rx.text
+    }()
     
     lazy var eventTitle: Binder<String?> = {
         return self.titleLabel.rx.text
@@ -33,12 +37,15 @@ class EventCellView: UIView {
     
     private lazy var dateLabel: UILabel = {
         let label = UILabel(frame: .zero)
+        label.font = label.font.withSize(14)
         return label
     }()
     
     private lazy var titleLabel: UILabel  = {
         let label = UILabel(frame: .zero)
-         return label
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = false
+        return label
     }()
     
     override init(frame: CGRect = .zero) {
@@ -63,25 +70,23 @@ extension EventCellView: CodeView {
     
     func setupConstraints() {
         bannerImageView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
+            make.top.left.right .equalToSuperview()
             make.height.equalTo(120)
         }
         
         dateLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(bannerImageView.snp.bottom).inset(16)
-            make.left.equalToSuperview().inset(16)
-            make.right.equalToSuperview().offset(8)
+            make.top.equalTo(bannerImageView.snp.bottom).offset(16)
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().inset(16)
             make.height.equalTo(9)
         }
         
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(dateLabel.snp.bottom).inset(8)
-            make.left.equalToSuperview().inset(8)
-            make.right.equalToSuperview().offset(8)
+            make.top.equalTo(dateLabel.snp.bottom).offset(8)
+            make.left.equalToSuperview().offset(8)
+            make.right.equalToSuperview().inset(8)
             make.bottom.equalToSuperview()
-            make.height.equalTo(22)
+            make.height.greaterThanOrEqualTo(22)
         }
     }
     

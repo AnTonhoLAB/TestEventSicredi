@@ -57,7 +57,7 @@ class EventTableViewCell: UITableViewCell {
         
         outputs.date
             .asObservable()
-            .bind(to: cellView.eventTitle)
+            .bind(to: cellView.eventDate)
             .disposed(by: disposeBag)
     }
 }
