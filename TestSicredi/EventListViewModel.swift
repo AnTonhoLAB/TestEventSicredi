@@ -20,7 +20,6 @@ class EventListViewModel {
     
     struct Output {
         let networkingStatus: Driver<NetworkingState<[Event]>>
-//        let EventList: Driver<[Event]>
     }
     
     init(eventListUsecaseProtocol: EventListUsecaseProtocol) {

@@ -38,5 +38,6 @@ class EventListViewController: UpdatableViewController {
             })
             .drive(rx.loadingState)
             .disposed(by: disposeBag)
+        
     }
 }
