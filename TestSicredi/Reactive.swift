@@ -9,12 +9,24 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SDWebImage
 
 extension Reactive where Base : UIButton {
    public var valid : Binder<Bool> {
         return Binder(self.base) { button, valid in
             button.isEnabled = valid
             button.setTitleColor(valid ? .white : .black, for: .normal)
+        }
+    }
+}
+
+extension Reactive where Base : UIImageView {
+    var loadImage: Binder<String?> {
+        return Binder(self.base) {imageView, link in
+            imageView.sd_setImage(with: URL(string: link ?? StringHelper.imageNotFound), placeholderImage: #imageLiteral(resourceName: "placeholder")) { (_, err, _, _) in
+                guard (err != nil) else { return }
+                imageView.image = #imageLiteral(resourceName: "noImage")
+            }
         }
     }
 }

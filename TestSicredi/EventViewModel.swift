@@ -17,6 +17,7 @@ class EventViewModel {
     struct Output {
         let title: Driver<String?>
         let date: Driver<String?>
+        let imageLink: Driver<String?>
     }
     
     init(eventListUsecaseProtocol: EventListUsecaseProtocol, event: Event) {
@@ -35,9 +36,15 @@ class EventViewModel {
             observer.onNext(self.event.date?.toFormatedString())
             return Disposables.create()
         }
-        .asDriver(onErrorJustReturn: "Nome indisponível")
+        .asDriver(onErrorJustReturn: "Data indisponível")
         
-        let output = Output(title: title, date: date)
+        let imageLink = Observable<String?>.create { (observer) -> Disposable in
+            observer.onNext(self.event.image)
+            return Disposables.create()
+        }
+        .asDriver(onErrorJustReturn: StringHelper.imageNotFound)
+        
+        let output = Output(title: title, date: date, imageLink: imageLink)
         return output
     }
 }

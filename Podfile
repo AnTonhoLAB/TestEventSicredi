@@ -7,9 +7,12 @@ target 'TestSicredi' do
   use_frameworks!
 
   # Pods for TestSicredi
+  
   pod 'SnapKit', '~> 5.0.0'
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
+  pod 'SDWebImage'
+
 
   target 'TestSicrediTests' do
     inherit! :search_paths

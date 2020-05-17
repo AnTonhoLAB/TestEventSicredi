@@ -19,6 +19,10 @@ protocol EventViewComponents: UIView {
 
 class EventCellView: UIView, EventViewComponents {
     
+    lazy var eventImage: Binder<String?> = {
+        return self.bannerImageView.rx.loadImage
+    }()        
+    
     lazy var eventDate: Binder<String?> = {
         return self.dateLabel.rx.text
     }()

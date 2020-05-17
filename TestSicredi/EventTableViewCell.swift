@@ -59,5 +59,10 @@ class EventTableViewCell: UITableViewCell {
             .asObservable()
             .bind(to: cellView.eventDate)
             .disposed(by: disposeBag)
+        
+        outputs.imageLink
+            .asObservable()
+            .bind(to: cellView.eventImage)
+            .disposed(by: disposeBag)
     }
 }
