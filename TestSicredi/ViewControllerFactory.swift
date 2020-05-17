@@ -14,12 +14,10 @@ protocol ViewControllerFactoryProtocol {
 
 class ViewControllerFactory: ViewControllerFactoryProtocol {
     func instantiateEventListViewController() -> EventListViewController {
-           let eventListView = EventListView()
-//           let authRequester = AuthRequester()
-//           let loginUseCase = LoginUseCase(authRequester: authRequester)
-//           let loginViewModel = LoginViewModel(loginUseCase)
-//           let loginVC = LoginViewController(with: loginView, and: loginViewModel)
-           return EventListViewController(with: eventListView)
-       }
-
+        let eventListView = EventListView()
+        let eventListRequester = EventListRequester(nil)
+        let eventListUseCase = EventListUsecase(eventListRequester: eventListRequester)
+        let eventListViewModel = EventListViewModel(eventListUsecaseProtocol: eventListUseCase)
+        return EventListViewController(with: eventListView, viewModel: eventListViewModel)
+    }
 }
