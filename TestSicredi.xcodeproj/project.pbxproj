@@ -360,6 +360,7 @@
 				6B5C540024539119005662E7 /* Sources */,
 				6B5C540124539119005662E7 /* Frameworks */,
 				6B5C540224539119005662E7 /* Resources */,
+				5CA5A0ADE748D44A5600277B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -448,6 +449,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CA5A0ADE748D44A5600277B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSicredi/Pods-TestSicredi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSicredi/Pods-TestSicredi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestSicredi/Pods-TestSicredi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AB6FB1D5817A7F25F534EC69 /* [CP] Check Pods Manifest.lock */ = {
