@@ -40,25 +40,22 @@ class EventTableViewCell: UITableViewCell {
         }
     }
     
-//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//         super.init(style: style, reuseIdentifier: reuseIdentifier)
-//         addSubview(cellView)
-//         cellView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 5, paddingBottom: 10, paddingRight: 5, width: 0, height: 0, enableInsets: false)
-//         selectionStyle = .none
-//     }
-    
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     // MARK: - Functions
     func setup(viewModel: EventViewModel) {
         self.viewModel = viewModel
-        
     }
     
     private func setupViewModel() {
         let outputs = viewModel.transform()
         
         outputs.title
+            .asObservable()
+            .bind(to: cellView.eventTitle)
+            .disposed(by: disposeBag)
+        
+        outputs.date
             .asObservable()
             .bind(to: cellView.eventTitle)
             .disposed(by: disposeBag)

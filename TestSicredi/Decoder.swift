@@ -18,6 +18,7 @@ class Decoder {
     static func decodeObject<T>(type: T.Type, from data: Data) throws -> T where T: Decodable  {
         let decoder = JSONDecoder()
         do {
+            decoder.dateDecodingStrategy = .millisecondsSince1970
             let objectFromDecode = try decoder.decode(T.self, from: data)
             return objectFromDecode
         } catch {

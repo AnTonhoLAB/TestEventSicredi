@@ -11,7 +11,7 @@ import Foundation
 // MARK: - EventElement
 struct Event: Codable {
     let people: [Person]?
-    let date: Int?
+    let date: Date?
     let eventDescription: String?
     let image: String?
     let longitude, latitude, price: Double?

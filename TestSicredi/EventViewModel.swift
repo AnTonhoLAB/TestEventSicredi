@@ -16,6 +16,7 @@ class EventViewModel {
     
     struct Output {
         let title: Driver<String?>
+        let date: Driver<String?>
     }
     
     init(eventListUsecaseProtocol: EventListUsecaseProtocol, event: Event) {
@@ -26,10 +27,17 @@ class EventViewModel {
     func transform() -> EventViewModel.Output {
         let title = Observable<String?>.create { (observer) -> Disposable in
             observer.onNext(self.event.title)
-             return Disposables.create()
-        }.asDriver(onErrorJustReturn: "Nome indisponível")
-         
-        let output = Output(title: title)
+            return Disposables.create()
+        }
+        .asDriver(onErrorJustReturn: "Nome indisponível")
+        
+        let date = Observable<String?>.create { (observer) -> Disposable in
+            observer.onNext(self.event.date?.toFormatedString())
+            return Disposables.create()
+        }
+        .asDriver(onErrorJustReturn: "Nome indisponível")
+        
+        let output = Output(title: title, date: date)
         return output
     }
 }

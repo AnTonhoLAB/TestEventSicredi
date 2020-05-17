@@ -50,6 +50,7 @@
 		6B5C545724561D16005662E7 /* Cupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C545624561D16005662E7 /* Cupon.swift */; };
 		6B5C545924561D22005662E7 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C545824561D22005662E7 /* Person.swift */; };
 		6BED084524590F1E00DC7346 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED084424590F1E00DC7346 /* EventViewModel.swift */; };
+		6BED0847245A63B600DC7346 /* Date+DateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED0846245A63B600DC7346 /* Date+DateFormater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		6B5C545624561D16005662E7 /* Cupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupon.swift; sourceTree = "<group>"; };
 		6B5C545824561D22005662E7 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		6BED084424590F1E00DC7346 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		6BED0846245A63B600DC7346 /* Date+DateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateFormater.swift"; sourceTree = "<group>"; };
 		95B9CE90D490F622FD772B0F /* Pods-TestSicrediTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSicrediTests.release.xcconfig"; path = "Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF7436A2EA71B0A021911623 /* Pods_TestSicredi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestSicredi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3DF5FDA231E6051A8E571C /* Pods-TestSicredi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSicredi.release.xcconfig"; path = "Target Support Files/Pods-TestSicredi/Pods-TestSicredi.release.xcconfig"; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				6B5C543F2455322E005662E7 /* ViewController+Presentable.swift */,
+				6BED0846245A63B600DC7346 /* Date+DateFormater.swift */,
 			);
 			name = CommonExtensions;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				6B5C540824539119005662E7 /* AppDelegate.swift in Sources */,
 				6B558BAA2458B418007C0D63 /* EventTableViewCell.swift in Sources */,
 				6B5C540A24539119005662E7 /* SceneDelegate.swift in Sources */,
+				6BED0847245A63B600DC7346 /* Date+DateFormater.swift in Sources */,
 				6B5C5439245523B5005662E7 /* EventListView.swift in Sources */,
 				6B558BA72458B37F007C0D63 /* CodeView.swift in Sources */,
 				6B5C545524561C23005662E7 /* Event.swift in Sources */,

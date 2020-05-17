@@ -54,6 +54,7 @@ class EventCellView: UIView {
 }
 
 extension EventCellView: CodeView {
+    
     func buildViewHierarchy() {
         self.addSubview(bannerImageView)
         self.addSubview(dateLabel)
@@ -82,13 +83,10 @@ extension EventCellView: CodeView {
             make.bottom.equalToSuperview()
             make.height.equalTo(22)
         }
-
-        
     }
     
     func setupAdditionalConfiguration() {
         
     }
-    
-    
+
 }
