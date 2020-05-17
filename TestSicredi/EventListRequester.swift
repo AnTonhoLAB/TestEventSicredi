@@ -8,7 +8,11 @@
 
 import Foundation
 
-class EventListRequester {
+protocol EventListRequesterProtocol {
+    func getList(completion: @escaping (Result<EventList, NetworkingError>) -> Void)
+}
+
+class EventListRequester: EventListRequesterProtocol {
      private var credentials: Credentiable!
      
      init(_ credentials: Credentiable?) {
