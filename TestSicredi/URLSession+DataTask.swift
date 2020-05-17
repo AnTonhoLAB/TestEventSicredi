@@ -9,7 +9,23 @@
 import Foundation
 
 extension URLSession {
-    /// This function make a request and complete with the expected type in a `Result`
+
+    /**
+    Make a request and complete with the expected type in a `Result`.
+
+    Calling this method to abstract a request`.
+     
+        guard let url =  URL(string: "www.someurl.com") else {
+         completion(.failure(.urlBuildingError))
+         return
+        }
+        let completionHandler: (Result<Foo, Error>) -> Void = responseBuilder(completion: completion)
+        URLSession.shared.dataTask(with: url, completion: completionHandler).resume()
+
+    - Parameter url: The url to make a request.
+    - Parameter completion: The url to make a request.
+    - Precondition: `url` must be a valid url.
+    */
     func dataTask<T>(with url: URL, completion: @escaping (Result<T, Error>) -> Void) -> URLSessionDataTask where T: Decodable {
         return dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -32,19 +48,19 @@ extension URLSession {
         }
     }
     
-    /// This function make a request and complete with the Data in a `Result`
-    func dataTaskData(with url: URL, completion: @escaping (Result<Data, Error>) -> Void) -> URLSessionDataTask {
-        return dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            guard let data = data else {
-                let error = NSError(domain: "error", code: 0, userInfo: nil)
-                completion(.failure(error))
-                return
-            }
-            completion(.success(data))
-        }
-    }
+//    /// This function make a request and complete with the Data in a `Result`
+//    func dataTaskData(with url: URL, completion: @escaping (Result<Data, Error>) -> Void) -> URLSessionDataTask {
+//        return dataTask(with: url) { (data, response, error) in
+//            if let error = error {
+//                completion(.failure(error))
+//                return
+//            }
+//            guard let data = data else {
+//                let error = NSError(domain: "error", code: 0, userInfo: nil)
+//                completion(.failure(error))
+//                return
+//            }
+//            completion(.success(data))
+//        }
+//    }
 }
