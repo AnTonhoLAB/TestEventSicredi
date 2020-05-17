@@ -14,7 +14,6 @@ class EventTableViewCell: UITableViewCell {
     
     private lazy var cellView: EventCellView = {
         let view = EventCellView(frame: .zero)
-
         return view
     }()
 
@@ -32,13 +31,28 @@ class EventTableViewCell: UITableViewCell {
         addSubview(cellView)
         
         selectionStyle = .none
+        
+        self.cellView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
     }
+    
+//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+//         super.init(style: style, reuseIdentifier: reuseIdentifier)
+//         addSubview(cellView)
+//         cellView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 5, paddingBottom: 10, paddingRight: 5, width: 0, height: 0, enableInsets: false)
+//         selectionStyle = .none
+//     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     // MARK: - Functions
     func setup(viewModel: EventViewModel) {
         self.viewModel = viewModel
+        
     }
     
     private func setupViewModel() {

@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol EventListUsecaseProtocol: BaseUseCase {
-    func getEvents() -> Observable<NetworkingState<[Event]>>
+    func getEvents() -> Observable<(NetworkingState<[Event]>, [Event])>
 }
 
 final class EventListUsecase: EventListUsecaseProtocol {
@@ -20,16 +20,16 @@ final class EventListUsecase: EventListUsecaseProtocol {
     init(eventListRequester: EventListRequester) {
         self.requester = eventListRequester
     }
-
-    func getEvents() -> Observable<NetworkingState<[Event]>> {
-        return Observable<NetworkingState>.create{ observer in
-            observer.onNext(.loading)
+    
+    func getEvents() -> Observable<(NetworkingState<[Event]>, [Event])> {
+        return Observable<(NetworkingState<[Event]>, [Event])>.create{ observer in
+            observer.onNext((.loading, [Event]()))
             self.requester.getList { (result) in
                 switch result {
                 case .success(let events):
-                    observer.onNext(.success(events))
+                    observer.onNext((.success(events), events))
                 case .failure(let error):
-                    observer.onNext(.fail(error))
+                    observer.onNext((.fail(error), [Event]()))
                 }
             }
             return Disposables.create()

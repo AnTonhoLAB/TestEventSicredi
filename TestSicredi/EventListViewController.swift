@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class EventListViewController: UpdatableViewController {
     
@@ -27,6 +28,10 @@ class EventListViewController: UpdatableViewController {
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
+    override func viewDidLoad() {
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //        let inputs = EventListViewModel.Input(didReloadList: eventListView.t)
@@ -34,10 +39,20 @@ class EventListViewController: UpdatableViewController {
         
         outputs.networkingStatus
             .map({ (state) -> NetworkingState<Any> in
-            state.toAny()
+                state.0.toAny()
             })
             .drive(rx.loadingState)
             .disposed(by: disposeBag)
         
+        outputs.networkingStatus
+            .map ({ (tuple) -> [Event] in
+                return tuple.1
+            })
+            .asObservable()
+            .bind(to: eventListView.eventListTableView.rx.items(cellIdentifier: "EventTableViewCell", cellType: EventTableViewCell.self)) { row, model, cell in
+
+                cell.setup(viewModel: EventViewModel(eventListUsecaseProtocol: EventListUsecase(eventListRequester: EventListRequester(nil)), event: model))
+            }.disposed(by: disposeBag)
     }
 }
+//

@@ -19,7 +19,7 @@ class EventListViewModel {
     }
     
     struct Output {
-        let networkingStatus: Driver<NetworkingState<[Event]>>
+        let networkingStatus: Driver<(NetworkingState<[Event]>, [Event])>
     }
     
     init(eventListUsecaseProtocol: EventListUsecaseProtocol) {
@@ -27,7 +27,7 @@ class EventListViewModel {
     }
     
     func transform(input: EventListViewModel.Input) -> EventListViewModel.Output {
-        let listRequest = useCase.getEvents().asDriver(onErrorJustReturn: (.fail(NetworkingError.fail)))
+        let listRequest = useCase.getEvents().asDriver(onErrorJustReturn: ((.fail(NetworkingError.fail),[Event]())))
         
         return Output(networkingStatus: listRequest)
     }

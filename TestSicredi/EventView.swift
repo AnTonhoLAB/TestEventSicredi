@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SnapKit
 
 protocol EventViewComponents: UIView {
     /// To read UI informations
@@ -54,10 +55,34 @@ class EventCellView: UIView {
 
 extension EventCellView: CodeView {
     func buildViewHierarchy() {
-        
+        self.addSubview(bannerImageView)
+        self.addSubview(dateLabel)
+        self.addSubview(titleLabel)
     }
     
     func setupConstraints() {
+        bannerImageView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(120)
+        }
+        
+        dateLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(bannerImageView.snp.bottom).inset(16)
+            make.left.equalToSuperview().inset(16)
+            make.right.equalToSuperview().offset(8)
+            make.height.equalTo(9)
+        }
+        
+        titleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(dateLabel.snp.bottom).inset(8)
+            make.left.equalToSuperview().inset(8)
+            make.right.equalToSuperview().offset(8)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(22)
+        }
+
         
     }
     

@@ -16,8 +16,11 @@ protocol EventListViewComponents: UIView {
 
 class EventListView: UIView, EventListViewComponents {
     lazy var eventListTableView: UITableView = {
-        let view = UITableView()
-        return view
+        let tableView = UITableView(frame: .zero)
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: "EventTableViewCell")
+        tableView.estimatedRowHeight = 200
+        tableView.tableFooterView = UIView()
+        return tableView
     }()
 
     //MARK: - Initializers
