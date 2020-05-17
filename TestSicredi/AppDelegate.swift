@@ -10,8 +10,6 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    private lazy var appCoordinator: Coordinator = AppCoordinator(router: Router(rootController: self.rootController), coordinatorFactory: CoordinatorFactory())
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
