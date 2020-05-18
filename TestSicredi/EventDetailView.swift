@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import MapKit
 
 protocol EventDetailViewComponents: UIView {
     var eventImage: Binder<String?> { get }
@@ -17,6 +18,7 @@ protocol EventDetailViewComponents: UIView {
     var eventTitle: Binder<String?> { get }
     var price: Binder<String?> { get }
     var eventDescription: Binder<String?> { get }
+    var mapLocation: Binder<(Double, Double)> { get }
 }
 
 class EventDetailView: UIView, EventDetailViewComponents {
@@ -35,6 +37,10 @@ class EventDetailView: UIView, EventDetailViewComponents {
     }()
     lazy var eventDescription: Binder<String?> = {
         return self.eventDescriptionTextView.rx.inputText
+    }()
+    
+    lazy var mapLocation: Binder<(Double, Double)> = {
+        return self.mapView.rx.coordinates
     }()
     
     // MARK: - Private Variables
@@ -69,6 +75,11 @@ class EventDetailView: UIView, EventDetailViewComponents {
         textview.isUserInteractionEnabled = false
         return textview
     }()
+
+    private lazy var mapView: MKMapView = {
+        let map = MKMapView(frame: .zero)
+        return map 
+    }()
     
     //MARK: - Initializers
     override init(frame: CGRect = .zero) {
@@ -89,8 +100,10 @@ extension EventDetailView: CodeView  {
         self.scrollView.addSubview(stackView)
         self.stackView.addArrangedSubview(imageEvent)
         self.stackView.addArrangedSubview(eventTitleLabel)
+        self.stackView.addArrangedSubview(dateLabel)
         self.stackView.addArrangedSubview(priceLabel)
         self.stackView.addArrangedSubview(eventDescriptionTextView)
+        self.stackView.addArrangedSubview(mapView)
     }
     
     // MARK: - Constraints Configuration
@@ -112,11 +125,19 @@ extension EventDetailView: CodeView  {
             make.height.equalTo(32)
         }
         
+        dateLabel.snp.makeConstraints { (make) in
+            make.height.equalTo(22)
+        }
+        
         priceLabel.snp.makeConstraints { (make) in
             make.height.equalTo(22)
         }
         
         eventDescriptionTextView.snp.makeConstraints { (make) in
+            make.height.equalTo(200)
+        }
+        
+        mapView.snp.makeConstraints { (make) in
             make.height.equalTo(200)
         }
     }

@@ -23,8 +23,10 @@ class EventDetailViewModel {
     struct Output {
         let imageLink: Driver<String?>
         let title: Driver<String?>
+        let date: Driver<String?>
         let price: Driver<String?>
         let description: Driver<String?>
+        let location: Driver<(Double, Double)>
     }
     
      // MARK: - Life Cycle
@@ -46,6 +48,12 @@ class EventDetailViewModel {
         }
         .asDriver(onErrorJustReturn: "Sem titulo")
         
+        let date = Observable<String?>.create { (observer) -> Disposable in
+            observer.onNext(self.event.date?.toFormatedString())
+            return Disposables.create()
+        }
+        .asDriver(onErrorJustReturn: "Sem data marcada")
+        
         let price = Observable<String?>.create { (observer) -> Disposable in
             if let price = self.event.price {
                 observer.onNext("R$ \(price)")
@@ -62,7 +70,13 @@ class EventDetailViewModel {
         }
         .asDriver(onErrorJustReturn: "")
         
-        return Output(imageLink: imageLink, title: title, price: price, description: description)
+        let location = Observable<(Double, Double)>.create { (observer) -> Disposable in
+            observer.onNext((self.event.latitude ?? 0.0, self.event.longitude ?? 0.0))
+            return Disposables.create()
+        }
+        .asDriver(onErrorJustReturn: (0.0,0.0))
+        
+        return Output(imageLink: imageLink, title: title, date: date, price: price, description: description, location: location)
     }
     
 }

@@ -45,6 +45,11 @@ class EventDetailViewController: UpdatableViewController {
             .bind(to: detailView.eventTitle)
             .disposed(by: disposeBag)
         
+        outputs.date
+            .asObservable()
+            .bind(to: detailView.eventDate)
+            .disposed(by: disposeBag)
+        
         outputs.price
             .asObservable()
             .bind(to: detailView.price)
@@ -54,7 +59,11 @@ class EventDetailViewController: UpdatableViewController {
             .asObservable()
             .bind(to: detailView.eventDescription)
             .disposed(by: disposeBag)
-    
+        
+        outputs.location
+            .asObservable()
+            .bind(to: detailView.mapLocation)
+            .disposed(by: disposeBag)
 
     }
     
