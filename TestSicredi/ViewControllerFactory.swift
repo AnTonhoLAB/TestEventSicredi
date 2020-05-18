@@ -10,6 +10,8 @@ import Foundation
 
 protocol ViewControllerFactoryProtocol {
     func instantiateEventListViewController() -> EventListViewController
+    func instantiateEventDetailViewController(event: Event) -> EventDetailViewController
+    func instantiateViewModel(event: Event) -> EventViewModel 
 }
 
 class ViewControllerFactory: ViewControllerFactoryProtocol {
@@ -19,6 +21,13 @@ class ViewControllerFactory: ViewControllerFactoryProtocol {
         let eventListUseCase = EventListUsecase(eventListRequester: eventListRequester)
         let eventListViewModel = EventListViewModel(eventListUsecaseProtocol: eventListUseCase)
         return EventListViewController(with: eventListView, viewModel: eventListViewModel)
+    }
+    
+    func instantiateEventDetailViewController(event: Event) -> EventDetailViewController  {
+        let eventDetailView = EventDetailView()
+        let eventDetailViewModel = EventDetailViewModel(event: event)
+        let eventDetailViewController = EventDetailViewController(with: eventDetailView, viewModel: eventDetailViewModel)
+        return eventDetailViewController
     }
     
     func instantiateViewModel(event: Event) -> EventViewModel {

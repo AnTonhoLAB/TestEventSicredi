@@ -23,6 +23,20 @@ struct Event: Codable {
         case eventDescription = "description"
         case image, longitude, latitude, price, title, id, cupons
     }
+    
+    init(people: [Person]? = nil, date: Date? = nil, eventDescription: String? = nil, image: String? = nil, longitude: Double? = nil, latitude: Double? = nil, price: Double? = nil, title:String? = nil, id: String? = nil, cupons: [Cupon]? = nil) {
+       
+        self.people = people
+        self.date = date
+        self.eventDescription = eventDescription
+        self.image = image
+        self.longitude = longitude
+        self.latitude = latitude
+        self.price = price
+        self.title = title
+        self.id = id
+        self.cupons = cupons
+    }
 }
 
 typealias EventList = [Event]

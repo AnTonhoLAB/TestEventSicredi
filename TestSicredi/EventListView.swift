@@ -46,10 +46,7 @@ extension EventListView: CodeView  {
     // MARK: - Constraints Configuration
     func setupConstraints() {
         eventListTableView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.top.left.right.bottom.equalToSuperview()
         }
     }
     

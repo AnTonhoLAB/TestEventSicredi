@@ -14,10 +14,11 @@ class EventListViewController: UpdatableViewController {
     
     // MARK: - Constants
     private let disposeBag: DisposeBag = DisposeBag()
-    private var eventListView: EventListViewComponents!
     
     // MARK: - Variables
     private var viewModel: EventListViewModel!
+    private var eventListView: EventListViewComponents!
+    var openEvent: ((_ event: Event)->())?
     
     // MARK: - Life Cycle
     init(with view: EventListViewComponents, viewModel: EventListViewModel) {
@@ -28,9 +29,10 @@ class EventListViewController: UpdatableViewController {
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let outputs = viewModel.transform()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let input = EventListViewModel.Input(selectedItem: eventListView.eventListTableView.rx.modelSelected(Event.self).asObservable())
+        let outputs = viewModel.transform(inputs: input)
         
         outputs.networkingStatus
             .map({ (state) -> NetworkingState<Any> in
@@ -48,6 +50,14 @@ class EventListViewController: UpdatableViewController {
                 let factory = ViewControllerFactory()
                 cell.setup(viewModel: factory.instantiateViewModel(event: event))
             }.disposed(by: disposeBag)
+        
+        outputs.selectedItem
+            .map { $0 }
+            .asObservable()
+            .bind { (event) in
+                self.openEvent?(event)
+        }
+        .disposed(by: disposeBag)
     }
     
     // MARK: - Functions

@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SDWebImage
+import MapKit
 
 extension Reactive where Base : UIButton {
    public var valid : Binder<Bool> {
@@ -31,6 +32,14 @@ extension Reactive where Base : UIImageView {
     }
 }
 
+extension Reactive where Base : UITextView {
+    var inputText: Binder<String?> {
+        return Binder(self.base) {textView, text in
+            textView.text = text
+        }
+    }
+}
+
 extension Reactive where Base : UpdatableViewController {
     var loadingState : Binder<NetworkingState<Any>> {
         return Binder(self.base) { vc, state in
@@ -46,6 +55,19 @@ extension Reactive where Base : UpdatableViewController {
             case .default:
                 break
             }
+        }
+    }
+}
+
+extension Reactive where Base: MKMapView {
+    var coordinates: Binder<(Double, Double)> {
+        return Binder(self.base) { map, coordinate in
+            let initialLocation = CLLocation(latitude: coordinate.0, longitude: coordinate.1)
+            let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: coordinate.0, longitude: coordinate.1)
+            map.addAnnotation(annotation)
+            map.setRegion(coordinateRegion, animated: true)
         }
     }
 }
