@@ -35,10 +35,9 @@ class EventListViewController: UpdatableViewController {
         let outputs = viewModel.transform(inputs: input)
         
         outputs.networkingStatus
-            .map({ (state) -> NetworkingState<Any> in
-                state.0.toAny()
-            })
-            .drive(rx.loadingState)
+            .asObservable()
+            .map { $0.0 }
+            .bind(to: rx.loadingState)
             .disposed(by: disposeBag)
         
         outputs.networkingStatus

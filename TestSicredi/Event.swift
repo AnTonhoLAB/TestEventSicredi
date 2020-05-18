@@ -39,4 +39,21 @@ struct Event: Codable {
     }
 }
 
+extension Event: Equatable {
+    static func == (lhs: Event, rhs: Event) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 typealias EventList = [Event]
+typealias AppEvent = Event
+
+typealias matype = (NetworkingState<Array<AppEvent>>, Array<AppEvent>)
+
+func == <B: Equatable>(lhs: (NetworkingState<[B]>,[B]), rhs: (NetworkingState<[B]>,[B])) -> Bool {
+  return lhs.0 == rhs.0 && lhs.1 == rhs.1
+}
+
+func == (lhs: matype, rhs: matype) -> Bool {
+  return lhs.0 == rhs.0 && lhs.1 == rhs.1
+}
