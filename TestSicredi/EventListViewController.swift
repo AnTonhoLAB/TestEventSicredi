@@ -37,7 +37,7 @@ class EventListViewController: UpdatableViewController {
         outputs.networkingStatus
             .asObservable()
             .map { $0.0 }
-            .bind(to: rx.loadingState)
+            .bind(to: rx.eventLoadingState)
             .disposed(by: disposeBag)
         
         outputs.networkingStatus

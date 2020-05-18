@@ -33,8 +33,9 @@ class ViewControllerFactory: ViewControllerFactoryProtocol {
     
     func instantiateEventCheckin(event: Event) -> CheckInViewController {
         let checkinView = CheckInView()
-        let checkinUseCase = CheckinUseCase()
-        let checkinViewModel = CheckInViewModel(checkInUsecaseProtocol: checkinUseCase)
+        let checkinRequester = EventCheckinRequester(nil)
+        let checkinUseCase = CheckinUseCase(checkinRequester: checkinRequester)
+        let checkinViewModel = CheckInViewModel(checkInUsecaseProtocol: checkinUseCase, event: event)
         let checkinViewController = CheckInViewController(with: checkinView, viewModel: checkinViewModel)
         return checkinViewController
     }

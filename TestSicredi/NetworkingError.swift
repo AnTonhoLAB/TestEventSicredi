@@ -14,6 +14,7 @@ enum NetworkingError: Error {
     case notFound
     case decodeError
     case invalidURL
+    case invalidParameter
 }
 
 extension NetworkingError {
@@ -41,6 +42,8 @@ extension NetworkingError {
             return NSLocalizedString("Houve um erro inesperado, entre em contato com o administrador", comment: "Erro ao decodificar um objeto")
           case .invalidURL:
             return NSLocalizedString("Não foi possivel fazer a requisição, se persistir contate o administrador", comment: "Erro de chamada")
+            case .invalidParameter:
+            return NSLocalizedString("Não foi possivel fazer a requisição pois os dados não sao validos, se persistir contate o administrador", comment: "Erro de chamada")
         }
       }
 }

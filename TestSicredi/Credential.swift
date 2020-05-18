@@ -13,6 +13,7 @@ protocol Credentiable {
     var basePath: String { get }
     var events: String { get }
     var id: String { get }
+    var checkin: String { get }
 }
 
 struct Credentials: Credentiable {
@@ -20,4 +21,5 @@ struct Credentials: Credentiable {
     var basePath = "/api"
     var events = "/events"
     var id = "/%@"
+    var checkin = "/checkin"
 }

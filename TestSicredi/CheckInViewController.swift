@@ -27,6 +27,20 @@ class CheckInViewController: UpdatableViewController {
         self.viewModel = viewModel
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let inputs = CheckInViewModel.Input(name: checkinView.name, email: checkinView.email, didTapCheckin: checkinView.didTapCheckin)
+        let outputs = viewModel.transform(inputs: inputs)
+        
+        outputs.networkingStatus
+            .asObservable()
+            .map { $0 }
+            .bind(to: self.rx.checkinLoadingState)
+            .disposed(by: disposeBag)
+        
+    }
+    
     override func willMove(toParent parent: UIViewController?) {
         if parent == nil {
             self.finishFlow?()

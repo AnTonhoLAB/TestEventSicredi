@@ -38,7 +38,7 @@ extension URLSession {
                 completion(.failure(error))
                 return
             }
-            
+             
             do {
                 let myNewObject = try Decoder.decodeObject(type: T.self, from: data)
                 completion(.success(myNewObject))
@@ -48,19 +48,21 @@ extension URLSession {
         }
     }
     
-//    /// This function make a request and complete with the Data in a `Result`
-//    func dataTaskData(with url: URL, completion: @escaping (Result<Data, Error>) -> Void) -> URLSessionDataTask {
-//        return dataTask(with: url) { (data, response, error) in
-//            if let error = error {
-//                completion(.failure(error))
-//                return
-//            }
-//            guard let data = data else {
-//                let error = NSError(domain: "error", code: 0, userInfo: nil)
-//                completion(.failure(error))
-//                return
-//            }
-//            completion(.success(data))
-//        }
-//    }
+    func dataTask(with request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) -> URLSessionDataTask {
+
+        return dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = data else {
+                let error = NSError(domain: "error", code: 0, userInfo: nil)
+                completion(.failure(error))
+                return
+            }
+
+            completion(.success(data))
+        }
+    } 
 }
