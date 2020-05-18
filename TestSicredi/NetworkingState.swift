@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NetworkingState<T> {
+enum NetworkingState<T>: Equatable where T: Equatable  {
     case loading
     case success(T)
     case fail(Error)
@@ -32,17 +32,3 @@ enum NetworkingState<T> {
     }
 }
 
-extension NetworkingState {
-    func toAny() -> NetworkingState<Any> {
-        switch self{
-            case .loading:
-                return .loading
-            case .success(let object):
-                return .success(object)
-            case .fail(let error):
-                return .fail(error)
-            case .default:
-                return .default
-        }
-    }
-}

@@ -41,7 +41,7 @@ extension Reactive where Base : UITextView {
 }
 
 extension Reactive where Base : UpdatableViewController {
-    var loadingState : Binder<NetworkingState<Any>> {
+    var loadingState : Binder<NetworkingState<[Event]>> {
         return Binder(self.base) { vc, state in
            switch state {
             case .loading:

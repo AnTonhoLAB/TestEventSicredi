@@ -10,16 +10,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class EventDetailViewModel {
+class EventViewModel {
     
     // MARK: - Variables
     private var event: Event!
     
      // MARK: - Intputs/Outputs
-    struct Input {
-        
-    }
-    
     struct Output {
         let imageLink: Driver<String?>
         let title: Driver<String?>
@@ -35,7 +31,7 @@ class EventDetailViewModel {
     }
     
     // MARK: - Functions
-    func transform(inputs: Input) -> EventDetailViewModel.Output {
+    func transform() -> EventViewModel.Output {
         let imageLink = Observable<String?>.create { (observer) -> Disposable in
             observer.onNext(self.event.image)
             return Disposables.create()

@@ -16,12 +16,12 @@ class EventDetailViewController: UpdatableViewController {
     private let disposeBag: DisposeBag = DisposeBag()
     
     // MARK: - Variables
-    private var viewModel: EventDetailViewModel!
+    private var viewModel: EventViewModel!
     private var detailView: EventDetailViewComponents!
     var openEvent: ((_ event: Event)->())?
     
     // MARK: - Life Cycle
-    init(with view: EventDetailViewComponents, viewModel: EventDetailViewModel) {
+    init(with view: EventDetailViewComponents, viewModel: EventViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.detailView = view
         self.viewModel = viewModel
@@ -31,9 +31,8 @@ class EventDetailViewController: UpdatableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    
-//        let input = EventListViewModel.Input(selectedItem: eventListView.eventListTableView.rx.modelSelected(Event.self).asObservable())
-        let outputs = viewModel.transform(inputs: EventDetailViewModel.Input())
+
+        let outputs = viewModel.transform()
         
         outputs.imageLink
             .asObservable()
