@@ -62,7 +62,6 @@ class EventDetailViewController: UpdatableViewController {
         outputs.openCheckinOptions?
             .asObservable()
             .bind { event in
-                print("many")
                 self.checkinEvent?(event)
             }
             .disposed(by: disposeBag)

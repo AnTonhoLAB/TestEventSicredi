@@ -17,13 +17,13 @@ class CheckInViewController: UpdatableViewController {
     
     // MARK: - Variables
     private var viewModel: CheckInViewModel!
-    private var eventListView: CheckInViewComponents!
+    private var checkinView: CheckInViewComponents!
     var finishFlow: (()->())?
     
     // MARK: - Life Cycle
     init(with view: CheckInViewComponents, viewModel: CheckInViewModel) {
         super.init(nibName: nil, bundle: nil)
-        self.eventListView = view
+        self.checkinView = view
         self.viewModel = viewModel
     }
     
@@ -34,4 +34,9 @@ class CheckInViewController: UpdatableViewController {
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    // MARK: - Functions
+    override func loadView() {
+        self.view = checkinView
+    }
 }
