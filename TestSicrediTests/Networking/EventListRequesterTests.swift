@@ -86,6 +86,7 @@ class EventListRequesterTests: XCTestCase {
 }
 
 struct WrongCredentials: Credentiable {
+    var checkin = "/checkinsa"
     var url = "///0ba5db24a100142dcd"
     var basePath = "//api"
     var events = "Ç/events"

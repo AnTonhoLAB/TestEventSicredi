@@ -10,6 +10,8 @@
 		56D85D5191E810FBC2E1B920 /* Pods_TestSicrediTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFA3602FB28091F2A17A895 /* Pods_TestSicrediTests.framework */; };
 		6B517E142472FEB4001D13CA /* CheckinCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B517E132472FEB4001D13CA /* CheckinCoordinator.swift */; };
 		6B517E1724732C7C001D13CA /* EventCheckinRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B517E1624732C7C001D13CA /* EventCheckinRequester.swift */; };
+		6B517E1A24734E5F001D13CA /* CheckinViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B517E1924734E5F001D13CA /* CheckinViewModelTests.swift */; };
+		6B517E1D24734F51001D13CA /* CheckinUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B517E1C24734F51001D13CA /* CheckinUseCaseMock.swift */; };
 		6B558B892457C8C4007C0D63 /* Pods_TestSicredi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7436A2EA71B0A021911623 /* Pods_TestSicredi.framework */; };
 		6B558B922457CF97007C0D63 /* EventListRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558B912457CF97007C0D63 /* EventListRequesterTests.swift */; };
 		6B558B952457D8DF007C0D63 /* EventListStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B558B942457D8DF007C0D63 /* EventListStub.json */; };
@@ -82,6 +84,8 @@
 		3EB357123087F097E7F53BD1 /* Pods-TestSicredi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSicredi.debug.xcconfig"; path = "Target Support Files/Pods-TestSicredi/Pods-TestSicredi.debug.xcconfig"; sourceTree = "<group>"; };
 		6B517E132472FEB4001D13CA /* CheckinCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinCoordinator.swift; sourceTree = "<group>"; };
 		6B517E1624732C7C001D13CA /* EventCheckinRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCheckinRequester.swift; sourceTree = "<group>"; };
+		6B517E1924734E5F001D13CA /* CheckinViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinViewModelTests.swift; sourceTree = "<group>"; };
+		6B517E1C24734F51001D13CA /* CheckinUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinUseCaseMock.swift; sourceTree = "<group>"; };
 		6B558B7F2457C575007C0D63 /* TestSicrediTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSicrediTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B558B832457C575007C0D63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B558B902457CF97007C0D63 /* TestSicrediTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestSicrediTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -189,12 +193,30 @@
 			name = RunCheckin;
 			sourceTree = "<group>";
 		};
+		6B517E1824734C48001D13CA /* Checkin */ = {
+			isa = PBXGroup;
+			children = (
+				6B517E1924734E5F001D13CA /* CheckinViewModelTests.swift */,
+				6B517E1B24734F2C001D13CA /* Mock */,
+			);
+			path = Checkin;
+			sourceTree = "<group>";
+		};
+		6B517E1B24734F2C001D13CA /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				6B517E1C24734F51001D13CA /* CheckinUseCaseMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		6B558B802457C575007C0D63 /* TestSicrediTests */ = {
 			isa = PBXGroup;
 			children = (
 				6B558B932457D584007C0D63 /* Networking */,
 				6B9FCC79245F79D6002617E8 /* List */,
 				6BB84956246044370064A719 /* EventTests */,
+				6B517E1824734C48001D13CA /* Checkin */,
 				6B558B832457C575007C0D63 /* Info.plist */,
 				6B558B902457CF97007C0D63 /* TestSicrediTests-Bridging-Header.h */,
 			);
@@ -649,6 +671,8 @@
 				6B558B9B2457F224007C0D63 /* EventListDiferentValuesTests.swift in Sources */,
 				6B558B922457CF97007C0D63 /* EventListRequesterTests.swift in Sources */,
 				6B9FCC80245F8865002617E8 /* EventListUseCaseMock.swift in Sources */,
+				6B517E1D24734F51001D13CA /* CheckinUseCaseMock.swift in Sources */,
+				6B517E1A24734E5F001D13CA /* CheckinViewModelTests.swift in Sources */,
 				6B558B992457EE6C007C0D63 /* EventListWrongRequesterTests.swift in Sources */,
 				6B9FCC7D245F7BE6002617E8 /* EventListViewModelTests.swift in Sources */,
 				6BB849582460447D0064A719 /* EventViewModelTests.swift in Sources */,
