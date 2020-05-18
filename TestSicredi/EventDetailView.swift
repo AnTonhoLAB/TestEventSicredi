@@ -19,6 +19,8 @@ protocol EventDetailViewComponents: UIView {
     var price: Binder<String?> { get }
     var eventDescription: Binder<String?> { get }
     var mapLocation: Binder<(Double, Double)> { get }
+    var didTapShare: Observable<Void> { get }
+    var didTapCheckin: Observable<Void> { get }
 }
 
 class EventDetailView: UIView, EventDetailViewComponents {
@@ -38,11 +40,15 @@ class EventDetailView: UIView, EventDetailViewComponents {
     lazy var eventDescription: Binder<String?> = {
         return self.eventDescriptionTextView.rx.inputText
     }()
-    
     lazy var mapLocation: Binder<(Double, Double)> = {
         return self.mapView.rx.coordinates
     }()
-    
+    lazy var didTapShare: Observable<Void> = {
+        return self.shareButton.rx.tap.asObservable()
+    }()
+    lazy var didTapCheckin: Observable<Void> = {
+        return self.checkinButton.rx.tap.asObservable()
+    }()
     // MARK: - Private Variables
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)

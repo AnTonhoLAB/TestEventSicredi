@@ -18,21 +18,16 @@ class EventDetailViewController: UpdatableViewController {
     // MARK: - Variables
     private var viewModel: EventViewModel!
     private var detailView: EventDetailViewComponents!
-    var openEvent: ((_ event: Event)->())?
+    var checkinEvent: ((_ event: Event)->())?
     
     // MARK: - Life Cycle
     init(with view: EventDetailViewComponents, viewModel: EventViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.detailView = view
         self.viewModel = viewModel
-    }
-    
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        let outputs = viewModel.transform()
+        
+        let inputs = EventViewModel.Input(didTapShare: detailView.didTapShare, didTapCheckin: detailView.didTapCheckin)
+        let outputs = viewModel.transform(input: inputs)
         
         outputs.imageLink
             .asObservable()
@@ -63,7 +58,22 @@ class EventDetailViewController: UpdatableViewController {
             .asObservable()
             .bind(to: detailView.mapLocation)
             .disposed(by: disposeBag)
+        
+        outputs.openCheckinOptions?
+            .asObservable()
+            .bind { event in
+                print("many")
+                self.checkinEvent?(event)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
+        
     }
     
     // MARK: - Functions
