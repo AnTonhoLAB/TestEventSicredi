@@ -60,13 +60,6 @@ class EventListViewController: UpdatableViewController {
         .disposed(by: disposeBag)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        
-
-    }
-    
     // MARK: - Functions
     override func loadView() {
         self.view = eventListView
