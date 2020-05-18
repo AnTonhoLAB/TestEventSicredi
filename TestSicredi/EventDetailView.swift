@@ -21,6 +21,7 @@ protocol EventDetailViewComponents: UIView {
     var mapLocation: Binder<(Double, Double)> { get }
     var didTapShare: Observable<Void> { get }
     var didTapCheckin: Observable<Void> { get }
+    var imageLiteral: UIImage? { get }
 }
 
 class EventDetailView: UIView, EventDetailViewComponents {
@@ -48,6 +49,9 @@ class EventDetailView: UIView, EventDetailViewComponents {
     }()
     lazy var didTapCheckin: Observable<Void> = {
         return self.checkinButton.rx.tap.asObservable()
+    }()
+    lazy var imageLiteral: UIImage? = {
+        return self.imageEvent.image
     }()
     // MARK: - Private Variables
     private lazy var scrollView: UIScrollView = {

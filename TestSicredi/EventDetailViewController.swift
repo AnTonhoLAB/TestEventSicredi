@@ -65,6 +65,14 @@ class EventDetailViewController: UpdatableViewController {
                 self.checkinEvent?(event)
             }
             .disposed(by: disposeBag)
+        
+        
+        outputs.openShareOptions?
+            .asObservable()
+            .bind { event in
+                self.shareEvent(event: event)
+            }
+            .disposed(by: disposeBag)
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -78,5 +86,17 @@ class EventDetailViewController: UpdatableViewController {
     // MARK: - Functions
     override func loadView() {
         self.view = detailView
+    }
+    
+    func shareEvent(event: Event) {
+       
+        let description = event.title ?? ""
+        let image = self.detailView.imageLiteral
+        let sharedObjects = [image ??  #imageLiteral(resourceName: "noImage"), description] as [Any]
+        let activityViewController = UIActivityViewController(activityItems : sharedObjects, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook,UIActivity.ActivityType.postToTwitter]
+        
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }
