@@ -7,3 +7,31 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+class EventDetailViewModel {
+    
+    // MARK: - Variables
+    private var useCase: EventListUsecaseProtocol!
+    
+     // MARK: - Intputs/Outputs
+    struct Input {
+        
+    }
+    
+    struct Output {
+       
+    }
+    
+     // MARK: - Life Cycle
+    init() {
+        
+    }
+    
+    // MARK: - Functions
+    func transform(inputs: Input) -> EventDetailViewModel.Output {
+        return Output()
+    }
+    
+}

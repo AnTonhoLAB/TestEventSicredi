@@ -14,10 +14,10 @@ class EventListViewController: UpdatableViewController {
     
     // MARK: - Constants
     private let disposeBag: DisposeBag = DisposeBag()
-    private var eventListView: EventListViewComponents!
     
     // MARK: - Variables
     private var viewModel: EventListViewModel!
+    private var eventListView: EventListViewComponents!
     var openEvent: ((_ event: Event)->())?
     
     // MARK: - Life Cycle
