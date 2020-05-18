@@ -32,6 +32,29 @@ class EventDetailViewController: UpdatableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     
+//        let input = EventListViewModel.Input(selectedItem: eventListView.eventListTableView.rx.modelSelected(Event.self).asObservable())
+        let outputs = viewModel.transform(inputs: EventDetailViewModel.Input())
+        
+        outputs.imageLink
+            .asObservable()
+            .bind(to: detailView.eventImage)
+            .disposed(by: disposeBag)
+        
+        outputs.title
+            .asObservable()
+            .bind(to: detailView.eventTitle)
+            .disposed(by: disposeBag)
+        
+        outputs.price
+            .asObservable()
+            .bind(to: detailView.price)
+            .disposed(by: disposeBag)
+        
+        outputs.description
+            .asObservable()
+            .bind(to: detailView.eventDescription)
+            .disposed(by: disposeBag)
+    
 
     }
     

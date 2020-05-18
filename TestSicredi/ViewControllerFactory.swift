@@ -10,7 +10,8 @@ import Foundation
 
 protocol ViewControllerFactoryProtocol {
     func instantiateEventListViewController() -> EventListViewController
-    func instantiateEventDetailViewController() -> EventDetailViewController
+    func instantiateEventDetailViewController(event: Event) -> EventDetailViewController
+    func instantiateViewModel(event: Event) -> EventViewModel 
 }
 
 class ViewControllerFactory: ViewControllerFactoryProtocol {
@@ -22,9 +23,9 @@ class ViewControllerFactory: ViewControllerFactoryProtocol {
         return EventListViewController(with: eventListView, viewModel: eventListViewModel)
     }
     
-    func instantiateEventDetailViewController() -> EventDetailViewController  {
+    func instantiateEventDetailViewController(event: Event) -> EventDetailViewController  {
         let eventDetailView = EventDetailView()
-        let eventDetailViewModel = EventDetailViewModel()
+        let eventDetailViewModel = EventDetailViewModel(event: event)
         let eventDetailViewController = EventDetailViewController(with: eventDetailView, viewModel: eventDetailViewModel)
         return eventDetailViewController
     }

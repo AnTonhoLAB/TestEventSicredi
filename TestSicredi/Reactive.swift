@@ -31,6 +31,14 @@ extension Reactive where Base : UIImageView {
     }
 }
 
+extension Reactive where Base : UITextView {
+    var inputText: Binder<String?> {
+        return Binder(self.base) {textView, text in
+            textView.text = text
+        }
+    }
+}
+
 extension Reactive where Base : UpdatableViewController {
     var loadingState : Binder<NetworkingState<Any>> {
         return Binder(self.base) { vc, state in
