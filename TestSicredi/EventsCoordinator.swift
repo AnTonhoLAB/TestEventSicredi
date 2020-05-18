@@ -31,7 +31,16 @@ class EventsCoordinator: BaseCoordinator {
     }
 
     private func openEventList() {
-        let eventListVC = self.viewControllerFactory.instantiateEventListViewController() 
+        let eventListVC = self.viewControllerFactory.instantiateEventListViewController()
+
+        eventListVC.openEvent = { event in
+            self.openEvent(event: event)
+        }
+        
         self.router.setRootModule(eventListVC, hideBar: true)
+    }
+    
+    private func openEvent(event: Event) {
+        
     }
 }

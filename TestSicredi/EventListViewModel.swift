@@ -16,8 +16,13 @@ class EventListViewModel {
     private var useCase: EventListUsecaseProtocol!
     
      // MARK: - Intputs/Outputs
+    struct Input {
+        let selectedItem: Observable<Event>
+    }
+    
     struct Output {
         let networkingStatus: Driver<(NetworkingState<[Event]>, [Event])>
+        let selectedItem: Driver<Event>
     }
     
      // MARK: - Life Cycle
@@ -26,9 +31,13 @@ class EventListViewModel {
     }
     
     // MARK: - Functions
-    func transform() -> EventListViewModel.Output {
+    func transform(inputs: Input) -> EventListViewModel.Output {
+        
+        let selectedItem = inputs.selectedItem.asDriver(onErrorJustReturn: Event())
+        
         let listRequest = useCase.getEvents().asDriver(onErrorJustReturn: ((.fail(NetworkingError.fail),[Event]())))
-        return Output(networkingStatus: listRequest)
+        
+        return Output(networkingStatus: listRequest, selectedItem: selectedItem)
     }
     
 }

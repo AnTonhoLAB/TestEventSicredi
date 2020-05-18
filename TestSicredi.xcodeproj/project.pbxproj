@@ -219,6 +219,7 @@
 			children = (
 				6B5C541B2453957C005662E7 /* Common */,
 				6B5C541F2453985E005662E7 /* CommonExtensions */,
+				6BED0856245B8EC200DC7346 /* CommonProtocols */,
 				6B5C542124551B35005662E7 /* Coordinator */,
 				6B5C541D24539600005662E7 /* Networking */,
 				6B5C545324561C11005662E7 /* Model */,
@@ -373,6 +374,13 @@
 				6BED0854245B824900DC7346 /* EventDetailUseCase.swift */,
 			);
 			name = EventDetail;
+			sourceTree = "<group>";
+		};
+		6BED0856245B8EC200DC7346 /* CommonProtocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CommonProtocols;
 			sourceTree = "<group>";
 		};
 		DD8295A8C47B7B527CC7BB7D /* Frameworks */ = {

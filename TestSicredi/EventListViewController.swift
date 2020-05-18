@@ -18,6 +18,7 @@ class EventListViewController: UpdatableViewController {
     
     // MARK: - Variables
     private var viewModel: EventListViewModel!
+    var openEvent: ((_ event: Event)->())?
     
     // MARK: - Life Cycle
     init(with view: EventListViewComponents, viewModel: EventListViewModel) {
@@ -30,7 +31,9 @@ class EventListViewController: UpdatableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let outputs = viewModel.transform()
+    
+        let input = EventListViewModel.Input(selectedItem: eventListView.eventListTableView.rx.modelSelected(Event.self).asObservable())
+        let outputs = viewModel.transform(inputs: input)
         
         outputs.networkingStatus
             .map({ (state) -> NetworkingState<Any> in
@@ -48,6 +51,15 @@ class EventListViewController: UpdatableViewController {
                 let factory = ViewControllerFactory()
                 cell.setup(viewModel: factory.instantiateViewModel(event: event))
             }.disposed(by: disposeBag)
+        
+        outputs.selectedItem
+            .map { $0 }
+            .asObservable()
+            .bind { (event) in
+                self.openEvent?(event)
+        }
+        .disposed(by: disposeBag)
+
     }
     
     // MARK: - Functions
