@@ -65,6 +65,7 @@ class EventDetailView: UIView, EventDetailViewComponents {
     private lazy var shareStackView: UIStackView = {
         let stack = UIStackView(frame: .zero)
         stack.axis = .horizontal
+        stack.spacing = 5
         return stack
     }()
     private lazy var datePriceStackView: UIStackView = {
@@ -82,8 +83,12 @@ class EventDetailView: UIView, EventDetailViewComponents {
     }()
     private lazy var checkinButton: UIButton = {
         let button = UIButton(frame: .zero)
-        button.setTitleColor(.red, for: .normal)
-        button.setTitle("Share", for: .normal)
+        button.setImage(#imageLiteral(resourceName: "checkin"), for: .normal)
+        return button
+    }()
+    private lazy var shareButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        button.setImage(#imageLiteral(resourceName: "share"), for: .normal)
         return button
     }()
     private lazy var eventDescriptionTextView: UITextView = {
@@ -116,15 +121,12 @@ extension EventDetailView: CodeView  {
         self.scrollView.addSubview(stackView)
         self.stackView.addArrangedSubview(imageEvent)
         self.stackView.addArrangedSubview(eventTitleLabel)
-  
         self.datePriceStackView.addArrangedSubview(dateLabel)
         self.datePriceStackView.addArrangedSubview(priceLabel)
-        
         self.shareStackView.addArrangedSubview(datePriceStackView)
+        self.shareStackView.addArrangedSubview(shareButton)
         self.shareStackView.addArrangedSubview(checkinButton)
         self.stackView.addArrangedSubview(shareStackView)
-
-        
         self.stackView.addArrangedSubview(eventDescriptionTextView)
         self.stackView.addArrangedSubview(mapView)
     }
@@ -165,7 +167,11 @@ extension EventDetailView: CodeView  {
         }
         
         checkinButton.snp.makeConstraints { (make) in
-            make.width.equalTo(90)
+            make.width.equalTo(50)
+        }
+        
+        shareButton.snp.makeConstraints { (make) in
+            make.width.equalTo(50)
         }
     }
     
