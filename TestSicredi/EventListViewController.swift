@@ -7,19 +7,60 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class EventListViewController: UIViewController {
+class EventListViewController: UpdatableViewController {
     
+    // MARK: - Constants
+    private let disposeBag: DisposeBag = DisposeBag()
+    
+    // MARK: - Variables
+    private var viewModel: EventListViewModel!
     private var eventListView: EventListViewComponents!
+    var openEvent: ((_ event: Event)->())?
     
-    init(with view: EventListViewComponents) {
+    // MARK: - Life Cycle
+    init(with view: EventListViewComponents, viewModel: EventListViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.eventListView = view
-    }
-    
-    override func loadView() {
-        self.view = eventListView
+        self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let input = EventListViewModel.Input(selectedItem: eventListView.eventListTableView.rx.modelSelected(Event.self).asObservable())
+        let outputs = viewModel.transform(inputs: input)
+        
+        outputs.networkingStatus
+            .asObservable()
+            .map { $0.0 }
+            .bind(to: rx.eventLoadingState)
+            .disposed(by: disposeBag)
+        
+        outputs.networkingStatus
+            .map ({ (tuple) -> [Event] in
+                return tuple.1
+            })
+            .asObservable()
+            .bind(to: eventListView.eventListTableView.rx.items(cellIdentifier: "EventTableViewCell", cellType: EventTableViewCell.self)) { row, event, cell in
+                let factory = ViewControllerFactory()
+                cell.setup(viewModel: factory.instantiateViewModel(event: event))
+            }.disposed(by: disposeBag)
+        
+        outputs.selectedItem
+            .map { $0 }
+            .asObservable()
+            .bind { (event) in
+                self.openEvent?(event)
+        }
+        .disposed(by: disposeBag)
+    }
+    
+    // MARK: - Functions
+    override func loadView() {
+        self.view = eventListView
+    }
 }

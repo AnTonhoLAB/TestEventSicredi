@@ -3,10 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56D85D5191E810FBC2E1B920 /* Pods_TestSicrediTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFA3602FB28091F2A17A895 /* Pods_TestSicrediTests.framework */; };
+		6B517E142472FEB4001D13CA /* CheckinCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B517E132472FEB4001D13CA /* CheckinCoordinator.swift */; };
+		6B517E1724732C7C001D13CA /* EventCheckinRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B517E1624732C7C001D13CA /* EventCheckinRequester.swift */; };
+		6B517E1A24734E5F001D13CA /* CheckinViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B517E1924734E5F001D13CA /* CheckinViewModelTests.swift */; };
+		6B517E1D24734F51001D13CA /* CheckinUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B517E1C24734F51001D13CA /* CheckinUseCaseMock.swift */; };
+		6B558B892457C8C4007C0D63 /* Pods_TestSicredi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7436A2EA71B0A021911623 /* Pods_TestSicredi.framework */; };
+		6B558B922457CF97007C0D63 /* EventListRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558B912457CF97007C0D63 /* EventListRequesterTests.swift */; };
+		6B558B952457D8DF007C0D63 /* EventListStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B558B942457D8DF007C0D63 /* EventListStub.json */; };
+		6B558B972457E89B007C0D63 /* EventListWrongStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B558B962457E89B007C0D63 /* EventListWrongStub.json */; };
+		6B558B992457EE6C007C0D63 /* EventListWrongRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558B982457EE6C007C0D63 /* EventListWrongRequesterTests.swift */; };
+		6B558B9B2457F224007C0D63 /* EventListDiferentValuesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558B9A2457F224007C0D63 /* EventListDiferentValuesTests.swift */; };
+		6B558B9D2457F250007C0D63 /* EventListDiferentValues.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B558B9C2457F250007C0D63 /* EventListDiferentValues.json */; };
+		6B558BA72458B37F007C0D63 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558BA62458B37F007C0D63 /* CodeView.swift */; };
+		6B558BAA2458B418007C0D63 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558BA92458B418007C0D63 /* EventTableViewCell.swift */; };
+		6B558BAC2458B445007C0D63 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558BAB2458B445007C0D63 /* EventView.swift */; };
+		6B558BB22458C9C3007C0D63 /* EventListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558BB12458C9C3007C0D63 /* EventListUseCase.swift */; };
+		6B558BB42458D838007C0D63 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B558BB32458D838007C0D63 /* Reactive.swift */; };
 		6B5C540824539119005662E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C540724539119005662E7 /* AppDelegate.swift */; };
 		6B5C540A24539119005662E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C540924539119005662E7 /* SceneDelegate.swift */; };
 		6B5C540F24539119005662E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5C540D24539119005662E7 /* Main.storyboard */; };
@@ -25,9 +42,64 @@
 		6B5C543B245523CD005662E7 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C543A245523CD005662E7 /* EventListViewModel.swift */; };
 		6B5C543D24552F47005662E7 /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C543C24552F47005662E7 /* EventsCoordinator.swift */; };
 		6B5C54402455322E005662E7 /* ViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C543F2455322E005662E7 /* ViewController+Presentable.swift */; };
+		6B5C54422455FDA1005662E7 /* EventListRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C54412455FDA1005662E7 /* EventListRequester.swift */; };
+		6B5C54442455FE16005662E7 /* NetworkingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C54432455FE16005662E7 /* NetworkingState.swift */; };
+		6B5C54462455FEC2005662E7 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C54452455FEC2005662E7 /* NetworkingError.swift */; };
+		6B5C54482455FFBA005662E7 /* NetworkingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C54472455FFBA005662E7 /* NetworkingHelper.swift */; };
+		6B5C544B245608D6005662E7 /* ResponseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C544A245608D6005662E7 /* ResponseBuilder.swift */; };
+		6B5C544E24560A67005662E7 /* URLSession+DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C544D24560A67005662E7 /* URLSession+DataTask.swift */; };
+		6B5C545024560AEB005662E7 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C544F24560AEB005662E7 /* Decoder.swift */; };
+		6B5C545224561B39005662E7 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C545124561B39005662E7 /* Credential.swift */; };
+		6B5C545524561C23005662E7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C545424561C23005662E7 /* Event.swift */; };
+		6B5C545724561D16005662E7 /* Cupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C545624561D16005662E7 /* Cupon.swift */; };
+		6B5C545924561D22005662E7 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C545824561D22005662E7 /* Person.swift */; };
+		6B9FCC7D245F7BE6002617E8 /* EventListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9FCC7C245F7BE6002617E8 /* EventListViewModelTests.swift */; };
+		6B9FCC80245F8865002617E8 /* EventListUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9FCC7F245F8865002617E8 /* EventListUseCaseMock.swift */; };
+		6BB849582460447D0064A719 /* EventViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB849572460447D0064A719 /* EventViewModelTests.swift */; };
+		6BB8495B246060860064A719 /* CheckinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8495A246060860064A719 /* CheckinView.swift */; };
+		6BB8495D246060B30064A719 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8495C246060B30064A719 /* CheckInViewController.swift */; };
+		6BB8495F246060E50064A719 /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8495E246060E50064A719 /* CheckInViewModel.swift */; };
+		6BB84961246062F50064A719 /* CheckInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB84960246062F50064A719 /* CheckInUseCase.swift */; };
+		6BED084524590F1E00DC7346 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED084424590F1E00DC7346 /* EventViewModel.swift */; };
+		6BED0847245A63B600DC7346 /* Date+DateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED0846245A63B600DC7346 /* Date+DateFormater.swift */; };
+		6BED0849245B634F00DC7346 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED0848245B634F00DC7346 /* StringHelper.swift */; };
+		6BED084B245B7B3300DC7346 /* ViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED084A245B7B3300DC7346 /* ViewController+Alert.swift */; };
+		6BED084F245B81FA00DC7346 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED084E245B81FA00DC7346 /* EventDetailView.swift */; };
+		6BED0851245B820700DC7346 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED0850245B820700DC7346 /* EventDetailViewController.swift */; };
+		6BED0853245B821400DC7346 /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BED0852245B821400DC7346 /* EventDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6B558B842457C575007C0D63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B5C53FC24539119005662E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B5C540324539119005662E7;
+			remoteInfo = TestSicredi;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		05011802461447CBF9F27033 /* Pods-TestSicrediTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSicrediTests.debug.xcconfig"; path = "Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3EB357123087F097E7F53BD1 /* Pods-TestSicredi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSicredi.debug.xcconfig"; path = "Target Support Files/Pods-TestSicredi/Pods-TestSicredi.debug.xcconfig"; sourceTree = "<group>"; };
+		6B517E132472FEB4001D13CA /* CheckinCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinCoordinator.swift; sourceTree = "<group>"; };
+		6B517E1624732C7C001D13CA /* EventCheckinRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCheckinRequester.swift; sourceTree = "<group>"; };
+		6B517E1924734E5F001D13CA /* CheckinViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinViewModelTests.swift; sourceTree = "<group>"; };
+		6B517E1C24734F51001D13CA /* CheckinUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinUseCaseMock.swift; sourceTree = "<group>"; };
+		6B558B7F2457C575007C0D63 /* TestSicrediTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSicrediTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B558B832457C575007C0D63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B558B902457CF97007C0D63 /* TestSicrediTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestSicrediTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		6B558B912457CF97007C0D63 /* EventListRequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRequesterTests.swift; sourceTree = "<group>"; };
+		6B558B942457D8DF007C0D63 /* EventListStub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EventListStub.json; sourceTree = "<group>"; };
+		6B558B962457E89B007C0D63 /* EventListWrongStub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EventListWrongStub.json; sourceTree = "<group>"; };
+		6B558B982457EE6C007C0D63 /* EventListWrongRequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListWrongRequesterTests.swift; sourceTree = "<group>"; };
+		6B558B9A2457F224007C0D63 /* EventListDiferentValuesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListDiferentValuesTests.swift; sourceTree = "<group>"; };
+		6B558B9C2457F250007C0D63 /* EventListDiferentValues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EventListDiferentValues.json; sourceTree = "<group>"; };
+		6B558BA62458B37F007C0D63 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		6B558BA92458B418007C0D63 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		6B558BAB2458B445007C0D63 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		6B558BB12458C9C3007C0D63 /* EventListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListUseCase.swift; sourceTree = "<group>"; };
+		6B558BB32458D838007C0D63 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		6B5C540424539119005662E7 /* TestSicredi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSicredi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5C540724539119005662E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B5C540924539119005662E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,24 +120,139 @@
 		6B5C543A245523CD005662E7 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		6B5C543C24552F47005662E7 /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
 		6B5C543F2455322E005662E7 /* ViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Presentable.swift"; sourceTree = "<group>"; };
+		6B5C54412455FDA1005662E7 /* EventListRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRequester.swift; sourceTree = "<group>"; };
+		6B5C54432455FE16005662E7 /* NetworkingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingState.swift; sourceTree = "<group>"; };
+		6B5C54452455FEC2005662E7 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		6B5C54472455FFBA005662E7 /* NetworkingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelper.swift; sourceTree = "<group>"; };
+		6B5C544A245608D6005662E7 /* ResponseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseBuilder.swift; sourceTree = "<group>"; };
+		6B5C544D24560A67005662E7 /* URLSession+DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTask.swift"; sourceTree = "<group>"; };
+		6B5C544F24560AEB005662E7 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		6B5C545124561B39005662E7 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		6B5C545424561C23005662E7 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		6B5C545624561D16005662E7 /* Cupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupon.swift; sourceTree = "<group>"; };
+		6B5C545824561D22005662E7 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		6B9FCC7C245F7BE6002617E8 /* EventListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModelTests.swift; sourceTree = "<group>"; };
+		6B9FCC7F245F8865002617E8 /* EventListUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListUseCaseMock.swift; sourceTree = "<group>"; };
+		6BB849572460447D0064A719 /* EventViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModelTests.swift; sourceTree = "<group>"; };
+		6BB8495A246060860064A719 /* CheckinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinView.swift; sourceTree = "<group>"; };
+		6BB8495C246060B30064A719 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
+		6BB8495E246060E50064A719 /* CheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
+		6BB84960246062F50064A719 /* CheckInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInUseCase.swift; sourceTree = "<group>"; };
+		6BED084424590F1E00DC7346 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		6BED0846245A63B600DC7346 /* Date+DateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateFormater.swift"; sourceTree = "<group>"; };
+		6BED0848245B634F00DC7346 /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
+		6BED084A245B7B3300DC7346 /* ViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Alert.swift"; sourceTree = "<group>"; };
+		6BED084E245B81FA00DC7346 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		6BED0850245B820700DC7346 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		6BED0852245B821400DC7346 /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
+		95B9CE90D490F622FD772B0F /* Pods-TestSicrediTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSicrediTests.release.xcconfig"; path = "Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests.release.xcconfig"; sourceTree = "<group>"; };
+		BF7436A2EA71B0A021911623 /* Pods_TestSicredi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestSicredi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA3DF5FDA231E6051A8E571C /* Pods-TestSicredi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSicredi.release.xcconfig"; path = "Target Support Files/Pods-TestSicredi/Pods-TestSicredi.release.xcconfig"; sourceTree = "<group>"; };
+		ECFA3602FB28091F2A17A895 /* Pods_TestSicrediTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestSicrediTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6B558B7C2457C575007C0D63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D85D5191E810FBC2E1B920 /* Pods_TestSicrediTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B5C540124539119005662E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B558B892457C8C4007C0D63 /* Pods_TestSicredi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		584A101CD540C3E0C1B244E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EB357123087F097E7F53BD1 /* Pods-TestSicredi.debug.xcconfig */,
+				EA3DF5FDA231E6051A8E571C /* Pods-TestSicredi.release.xcconfig */,
+				05011802461447CBF9F27033 /* Pods-TestSicrediTests.debug.xcconfig */,
+				95B9CE90D490F622FD772B0F /* Pods-TestSicrediTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6B517E152472FEBB001D13CA /* RunCheckin */ = {
+			isa = PBXGroup;
+			children = (
+				6BB8495A246060860064A719 /* CheckinView.swift */,
+				6BB8495C246060B30064A719 /* CheckInViewController.swift */,
+				6BB8495E246060E50064A719 /* CheckInViewModel.swift */,
+				6BB84960246062F50064A719 /* CheckInUseCase.swift */,
+			);
+			name = RunCheckin;
+			sourceTree = "<group>";
+		};
+		6B517E1824734C48001D13CA /* Checkin */ = {
+			isa = PBXGroup;
+			children = (
+				6B517E1924734E5F001D13CA /* CheckinViewModelTests.swift */,
+				6B517E1B24734F2C001D13CA /* Mock */,
+			);
+			path = Checkin;
+			sourceTree = "<group>";
+		};
+		6B517E1B24734F2C001D13CA /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				6B517E1C24734F51001D13CA /* CheckinUseCaseMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		6B558B802457C575007C0D63 /* TestSicrediTests */ = {
+			isa = PBXGroup;
+			children = (
+				6B558B932457D584007C0D63 /* Networking */,
+				6B9FCC79245F79D6002617E8 /* List */,
+				6BB84956246044370064A719 /* EventTests */,
+				6B517E1824734C48001D13CA /* Checkin */,
+				6B558B832457C575007C0D63 /* Info.plist */,
+				6B558B902457CF97007C0D63 /* TestSicrediTests-Bridging-Header.h */,
+			);
+			path = TestSicrediTests;
+			sourceTree = "<group>";
+		};
+		6B558B932457D584007C0D63 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6B558B912457CF97007C0D63 /* EventListRequesterTests.swift */,
+				6B558B982457EE6C007C0D63 /* EventListWrongRequesterTests.swift */,
+				6B558B9A2457F224007C0D63 /* EventListDiferentValuesTests.swift */,
+				6B558B942457D8DF007C0D63 /* EventListStub.json */,
+				6B558B962457E89B007C0D63 /* EventListWrongStub.json */,
+				6B558B9C2457F250007C0D63 /* EventListDiferentValues.json */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6B558BA82458B3E0007C0D63 /* EventListCell */ = {
+			isa = PBXGroup;
+			children = (
+				6B558BAB2458B445007C0D63 /* EventView.swift */,
+				6B558BA92458B418007C0D63 /* EventTableViewCell.swift */,
+			);
+			name = EventListCell;
+			sourceTree = "<group>";
+		};
 		6B5C53FB24539119005662E7 = {
 			isa = PBXGroup;
 			children = (
 				6B5C540624539119005662E7 /* TestSicredi */,
+				6B558B802457C575007C0D63 /* TestSicrediTests */,
 				6B5C540524539119005662E7 /* Products */,
+				584A101CD540C3E0C1B244E9 /* Pods */,
+				DD8295A8C47B7B527CC7BB7D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				6B5C540424539119005662E7 /* TestSicredi.app */,
+				6B558B7F2457C575007C0D63 /* TestSicrediTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,10 +268,12 @@
 		6B5C540624539119005662E7 /* TestSicredi */ = {
 			isa = PBXGroup;
 			children = (
-				6B5C542124551B35005662E7 /* Coordinator */,
-				6B5C541F2453985E005662E7 /* Extension */,
-				6B5C541D24539600005662E7 /* Networking */,
 				6B5C541B2453957C005662E7 /* Common */,
+				6B5C541F2453985E005662E7 /* CommonExtensions */,
+				6BED0856245B8EC200DC7346 /* CommonProtocols */,
+				6B5C542124551B35005662E7 /* Coordinator */,
+				6B5C541D24539600005662E7 /* Networking */,
+				6B5C545324561C11005662E7 /* Model */,
 				6B5C541C245395C9005662E7 /* Scene */,
 				6B5C541E24539745005662E7 /* Supp */,
 			);
@@ -93,8 +283,11 @@
 		6B5C541B2453957C005662E7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6B5C544F24560AEB005662E7 /* Decoder.swift */,
 				6B5C540924539119005662E7 /* SceneDelegate.swift */,
 				6B5C540724539119005662E7 /* AppDelegate.swift */,
+				6B558BA62458B37F007C0D63 /* CodeView.swift */,
+				6BED0848245B634F00DC7346 /* StringHelper.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -103,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				6B5C543E24552F7D005662E7 /* Events */,
+				6BB84959246060350064A719 /* CheckIn */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -110,6 +304,12 @@
 		6B5C541D24539600005662E7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				6B5C544C24560A15005662E7 /* Extensions */,
+				6B5C5449245608B5005662E7 /* Requesters */,
+				6B5C54432455FE16005662E7 /* NetworkingState.swift */,
+				6B5C54452455FEC2005662E7 /* NetworkingError.swift */,
+				6B5C54472455FFBA005662E7 /* NetworkingHelper.swift */,
+				6B5C544A245608D6005662E7 /* ResponseBuilder.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -125,12 +325,14 @@
 			name = Supp;
 			sourceTree = "<group>";
 		};
-		6B5C541F2453985E005662E7 /* Extension */ = {
+		6B5C541F2453985E005662E7 /* CommonExtensions */ = {
 			isa = PBXGroup;
 			children = (
 				6B5C543F2455322E005662E7 /* ViewController+Presentable.swift */,
+				6BED0846245A63B600DC7346 /* Date+DateFormater.swift */,
+				6BED084A245B7B3300DC7346 /* ViewController+Alert.swift */,
 			);
-			name = Extension;
+			name = CommonExtensions;
 			sourceTree = "<group>";
 		};
 		6B5C542124551B35005662E7 /* Coordinator */ = {
@@ -167,9 +369,11 @@
 		6B5C543724552396005662E7 /* EventList */ = {
 			isa = PBXGroup;
 			children = (
+				6B558BA82458B3E0007C0D63 /* EventListCell */,
 				6B5C5438245523B5005662E7 /* EventListView.swift */,
 				6B5C54352455238F005662E7 /* EventListViewController.swift */,
 				6B5C543A245523CD005662E7 /* EventListViewModel.swift */,
+				6B558BB12458C9C3007C0D63 /* EventListUseCase.swift */,
 			);
 			name = EventList;
 			sourceTree = "<group>";
@@ -178,21 +382,134 @@
 			isa = PBXGroup;
 			children = (
 				6B5C543C24552F47005662E7 /* EventsCoordinator.swift */,
+				6BED084424590F1E00DC7346 /* EventViewModel.swift */,
 				6B5C543724552396005662E7 /* EventList */,
+				6BED084D245B81DE00DC7346 /* EventDetail */,
 			);
 			name = Events;
+			sourceTree = "<group>";
+		};
+		6B5C5449245608B5005662E7 /* Requesters */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C545124561B39005662E7 /* Credential.swift */,
+				6B5C54412455FDA1005662E7 /* EventListRequester.swift */,
+				6B517E1624732C7C001D13CA /* EventCheckinRequester.swift */,
+			);
+			name = Requesters;
+			sourceTree = "<group>";
+		};
+		6B5C544C24560A15005662E7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C544D24560A67005662E7 /* URLSession+DataTask.swift */,
+				6B558BB32458D838007C0D63 /* Reactive.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		6B5C545324561C11005662E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C545424561C23005662E7 /* Event.swift */,
+				6B5C545824561D22005662E7 /* Person.swift */,
+				6B5C545624561D16005662E7 /* Cupon.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6B9FCC79245F79D6002617E8 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				6B9FCC7C245F7BE6002617E8 /* EventListViewModelTests.swift */,
+				6B9FCC7E245F8845002617E8 /* Mock */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		6B9FCC7E245F8845002617E8 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				6B9FCC7F245F8865002617E8 /* EventListUseCaseMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		6BB84956246044370064A719 /* EventTests */ = {
+			isa = PBXGroup;
+			children = (
+				6BB849572460447D0064A719 /* EventViewModelTests.swift */,
+			);
+			path = EventTests;
+			sourceTree = "<group>";
+		};
+		6BB84959246060350064A719 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				6B517E132472FEB4001D13CA /* CheckinCoordinator.swift */,
+				6B517E152472FEBB001D13CA /* RunCheckin */,
+			);
+			name = CheckIn;
+			sourceTree = "<group>";
+		};
+		6BED084D245B81DE00DC7346 /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				6BED084E245B81FA00DC7346 /* EventDetailView.swift */,
+				6BED0850245B820700DC7346 /* EventDetailViewController.swift */,
+				6BED0852245B821400DC7346 /* EventDetailViewModel.swift */,
+			);
+			name = EventDetail;
+			sourceTree = "<group>";
+		};
+		6BED0856245B8EC200DC7346 /* CommonProtocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CommonProtocols;
+			sourceTree = "<group>";
+		};
+		DD8295A8C47B7B527CC7BB7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF7436A2EA71B0A021911623 /* Pods_TestSicredi.framework */,
+				ECFA3602FB28091F2A17A895 /* Pods_TestSicrediTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6B558B7E2457C575007C0D63 /* TestSicrediTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B558B882457C575007C0D63 /* Build configuration list for PBXNativeTarget "TestSicrediTests" */;
+			buildPhases = (
+				AB6FB1D5817A7F25F534EC69 /* [CP] Check Pods Manifest.lock */,
+				6B558B7B2457C575007C0D63 /* Sources */,
+				6B558B7C2457C575007C0D63 /* Frameworks */,
+				6B558B7D2457C575007C0D63 /* Resources */,
+				2FE278D33369A2C9D2FE472B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B558B852457C575007C0D63 /* PBXTargetDependency */,
+			);
+			name = TestSicrediTests;
+			productName = TestSicrediTests;
+			productReference = 6B558B7F2457C575007C0D63 /* TestSicrediTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6B5C540324539119005662E7 /* TestSicredi */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B5C541824539128005662E7 /* Build configuration list for PBXNativeTarget "TestSicredi" */;
 			buildPhases = (
+				BECF54C19315BF5912411B2D /* [CP] Check Pods Manifest.lock */,
 				6B5C540024539119005662E7 /* Sources */,
 				6B5C540124539119005662E7 /* Frameworks */,
 				6B5C540224539119005662E7 /* Resources */,
+				5CA5A0ADE748D44A5600277B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +530,11 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "George Gomes";
 				TargetAttributes = {
+					6B558B7E2457C575007C0D63 = {
+						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
+						TestTargetID = 6B5C540324539119005662E7;
+					};
 					6B5C540324539119005662E7 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -232,11 +554,22 @@
 			projectRoot = "";
 			targets = (
 				6B5C540324539119005662E7 /* TestSicredi */,
+				6B558B7E2457C575007C0D63 /* TestSicrediTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6B558B7D2457C575007C0D63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B558B972457E89B007C0D63 /* EventListWrongStub.json in Resources */,
+				6B558B9D2457F250007C0D63 /* EventListDiferentValues.json in Resources */,
+				6B558B952457D8DF007C0D63 /* EventListStub.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B5C540224539119005662E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,30 +582,163 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FE278D33369A2C9D2FE472B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestSicrediTests/Pods-TestSicrediTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CA5A0ADE748D44A5600277B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSicredi/Pods-TestSicredi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestSicredi/Pods-TestSicredi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestSicredi/Pods-TestSicredi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB6FB1D5817A7F25F534EC69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestSicrediTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BECF54C19315BF5912411B2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestSicredi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		6B558B7B2457C575007C0D63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B558B9B2457F224007C0D63 /* EventListDiferentValuesTests.swift in Sources */,
+				6B558B922457CF97007C0D63 /* EventListRequesterTests.swift in Sources */,
+				6B9FCC80245F8865002617E8 /* EventListUseCaseMock.swift in Sources */,
+				6B517E1D24734F51001D13CA /* CheckinUseCaseMock.swift in Sources */,
+				6B517E1A24734E5F001D13CA /* CheckinViewModelTests.swift in Sources */,
+				6B558B992457EE6C007C0D63 /* EventListWrongRequesterTests.swift in Sources */,
+				6B9FCC7D245F7BE6002617E8 /* EventListViewModelTests.swift in Sources */,
+				6BB849582460447D0064A719 /* EventViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6B5C540024539119005662E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B5C54482455FFBA005662E7 /* NetworkingHelper.swift in Sources */,
 				6B5C542D24551C23005662E7 /* Coordinator.swift in Sources */,
+				6B5C54422455FDA1005662E7 /* EventListRequester.swift in Sources */,
+				6BB84961246062F50064A719 /* CheckInUseCase.swift in Sources */,
+				6B5C545224561B39005662E7 /* Credential.swift in Sources */,
+				6B5C54462455FEC2005662E7 /* NetworkingError.swift in Sources */,
+				6B5C545724561D16005662E7 /* Cupon.swift in Sources */,
 				6B5C542F24551C37005662E7 /* BaseCoordinator.swift in Sources */,
+				6B5C545024560AEB005662E7 /* Decoder.swift in Sources */,
+				6BED0853245B821400DC7346 /* EventDetailViewModel.swift in Sources */,
+				6BED0849245B634F00DC7346 /* StringHelper.swift in Sources */,
 				6B5C54362455238F005662E7 /* EventListViewController.swift in Sources */,
 				6B5C543124551C4C005662E7 /* AppCoordinator.swift in Sources */,
+				6BED084B245B7B3300DC7346 /* ViewController+Alert.swift in Sources */,
+				6B5C545924561D22005662E7 /* Person.swift in Sources */,
 				6B5C543B245523CD005662E7 /* EventListViewModel.swift in Sources */,
 				6B5C54402455322E005662E7 /* ViewController+Presentable.swift in Sources */,
+				6B558BB22458C9C3007C0D63 /* EventListUseCase.swift in Sources */,
+				6BB8495F246060E50064A719 /* CheckInViewModel.swift in Sources */,
 				6B5C542524551B83005662E7 /* ViewControllerFactory.swift in Sources */,
+				6B5C544E24560A67005662E7 /* URLSession+DataTask.swift in Sources */,
 				6B5C540824539119005662E7 /* AppDelegate.swift in Sources */,
+				6B558BAA2458B418007C0D63 /* EventTableViewCell.swift in Sources */,
 				6B5C540A24539119005662E7 /* SceneDelegate.swift in Sources */,
+				6BED0847245A63B600DC7346 /* Date+DateFormater.swift in Sources */,
+				6BB8495B246060860064A719 /* CheckinView.swift in Sources */,
 				6B5C5439245523B5005662E7 /* EventListView.swift in Sources */,
+				6B558BA72458B37F007C0D63 /* CodeView.swift in Sources */,
+				6B5C545524561C23005662E7 /* Event.swift in Sources */,
 				6B5C542924551BFC005662E7 /* Router.swift in Sources */,
+				6B558BAC2458B445007C0D63 /* EventView.swift in Sources */,
 				6B5C543324551C6E005662E7 /* LaunchInstructor.swift in Sources */,
 				6B5C542724551BD7005662E7 /* CoordinatorFactory.swift in Sources */,
+				6B5C544B245608D6005662E7 /* ResponseBuilder.swift in Sources */,
+				6BED0851245B820700DC7346 /* EventDetailViewController.swift in Sources */,
+				6B558BB42458D838007C0D63 /* Reactive.swift in Sources */,
+				6B517E142472FEB4001D13CA /* CheckinCoordinator.swift in Sources */,
+				6BB8495D246060B30064A719 /* CheckInViewController.swift in Sources */,
 				6B5C542B24551C0F005662E7 /* Presentable.swift in Sources */,
+				6BED084F245B81FA00DC7346 /* EventDetailView.swift in Sources */,
+				6BED084524590F1E00DC7346 /* EventViewModel.swift in Sources */,
+				6B517E1724732C7C001D13CA /* EventCheckinRequester.swift in Sources */,
+				6B5C54442455FE16005662E7 /* NetworkingState.swift in Sources */,
 				6B5C543D24552F47005662E7 /* EventsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6B558B852457C575007C0D63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B5C540324539119005662E7 /* TestSicredi */;
+			targetProxy = 6B558B842457C575007C0D63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6B5C540D24539119005662E7 /* Main.storyboard */ = {
@@ -294,6 +760,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6B558B862457C575007C0D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05011802461447CBF9F27033 /* Pods-TestSicrediTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TestSicrediTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.george.TestSicrediTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestSicrediTests/TestSicrediTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestSicredi.app/TestSicredi";
+			};
+			name = Debug;
+		};
+		6B558B872457C575007C0D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95B9CE90D490F622FD772B0F /* Pods-TestSicrediTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TestSicrediTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.george.TestSicrediTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestSicrediTests/TestSicrediTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestSicredi.app/TestSicredi";
+			};
+			name = Release;
+		};
 		6B5C541624539128005662E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -410,6 +921,7 @@
 		};
 		6B5C541924539128005662E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EB357123087F097E7F53BD1 /* Pods-TestSicredi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -427,6 +939,7 @@
 		};
 		6B5C541A24539128005662E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA3DF5FDA231E6051A8E571C /* Pods-TestSicredi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -445,6 +958,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6B558B882457C575007C0D63 /* Build configuration list for PBXNativeTarget "TestSicrediTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B558B862457C575007C0D63 /* Debug */,
+				6B558B872457C575007C0D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6B5C53FF24539119005662E7 /* Build configuration list for PBXProject "TestSicredi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

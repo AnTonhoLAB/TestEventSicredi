@@ -66,9 +66,4 @@ final class AppCoordinator: BaseCoordinator {
     }
 }
 
-extension AppCoordinator {
-    fileprivate func handle(transition: AppCoordinatorTransition) {
-
-    }
-}
 
