@@ -40,29 +40,14 @@ extension Reactive where Base : UpdatableViewController {
             case .success:
                 vc.removeLoading()
             case .fail(let error):
-                print(error)
                 vc.removeLoading()
+                let err = NetworkingError(error: error)
+                vc.alertSimpleMessage(message: err.errorDescription, action: nil)
             case .default:
                 break
             }
         }
     }
-
-    var loadWarning : Binder<NetworkingState<Any>> {
-           return Binder(self.base) { vc, state in
-              switch state {
-               case .loading:
-                   vc.showLoading()
-               case .success:
-                   vc.removeLoading()
-               case .fail(let error):
-                   print(error)
-                   vc.removeLoading()
-               case .default:
-                   break
-               }
-           }
-       }
 }
 
 class UpdatableViewController: UIViewController {
