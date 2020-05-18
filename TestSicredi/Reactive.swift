@@ -41,13 +41,33 @@ extension Reactive where Base : UITextView {
 }
 
 extension Reactive where Base : UpdatableViewController {
-    var loadingState : Binder<NetworkingState<[Event]>> {
+    var eventLoadingState : Binder<NetworkingState<[Event]>> {
         return Binder(self.base) { vc, state in
            switch state {
             case .loading:
                 vc.showLoading()
             case .success:
                 vc.removeLoading()
+            case .fail(let error):
+                vc.removeLoading()
+                let err = NetworkingError(error: error)
+                vc.alertSimpleMessage(message: err.errorDescription, action: nil)
+            case .default:
+                break
+            }
+        }
+    }
+    
+    var checkinLoadingState : Binder<NetworkingState<Data>> {
+        return Binder(self.base) { vc, state in
+           switch state {
+            case .loading:
+                vc.showLoading()
+            case .success:
+                vc.removeLoading()
+                vc.alertSimpleWarning(title: "Sucesso", message: "Checkin efetuado com sucesso") { (_) in
+                    vc.navigationController?.popViewController(animated: true)
+                }
             case .fail(let error):
                 vc.removeLoading()
                 let err = NetworkingError(error: error)

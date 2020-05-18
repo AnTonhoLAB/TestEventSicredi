@@ -43,6 +43,21 @@ class EventsCoordinator: BaseCoordinator {
     private func openEvent(event: Event) {
         let eventDetailVC = self.viewControllerFactory.instantiateEventDetailViewController(event: event)
         
+        eventDetailVC.checkinEvent = { event in
+            self.checkinEvent(event: event)
+        }
+        
         self.router.push(eventDetailVC, hideBar: false)
+    }
+    
+    private func checkinEvent(event: Event)  {
+        let checkinCoordinator = coordinatorFactory.makeCheckinCoordinatorBox(event: event,router: self.router, coordinatorFactory: self.coordinatorFactory, viewControllerFactory: self.viewControllerFactory)
+        
+        checkinCoordinator.finishFlow = {
+            self.removeDependency(checkinCoordinator)
+        }
+
+        self.addChild(coordinator: checkinCoordinator)
+        checkinCoordinator.start()
     }
 }

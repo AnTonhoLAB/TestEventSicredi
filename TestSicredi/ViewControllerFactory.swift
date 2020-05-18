@@ -11,6 +11,7 @@ import Foundation
 protocol ViewControllerFactoryProtocol {
     func instantiateEventListViewController() -> EventListViewController
     func instantiateEventDetailViewController(event: Event) -> EventDetailViewController
+    func instantiateEventCheckin(event: Event) -> CheckInViewController
     func instantiateViewModel(event: Event) -> EventViewModel 
 }
 
@@ -28,6 +29,15 @@ class ViewControllerFactory: ViewControllerFactoryProtocol {
         let eventDetailViewModel = EventViewModel(event: event)
         let eventDetailViewController = EventDetailViewController(with: eventDetailView, viewModel: eventDetailViewModel)
         return eventDetailViewController
+    }
+    
+    func instantiateEventCheckin(event: Event) -> CheckInViewController {
+        let checkinView = CheckInView()
+        let checkinRequester = EventCheckinRequester(nil)
+        let checkinUseCase = CheckinUseCase(checkinRequester: checkinRequester)
+        let checkinViewModel = CheckInViewModel(checkInUsecaseProtocol: checkinUseCase, event: event)
+        let checkinViewController = CheckInViewController(with: checkinView, viewModel: checkinViewModel)
+        return checkinViewController
     }
     
     func instantiateViewModel(event: Event) -> EventViewModel {

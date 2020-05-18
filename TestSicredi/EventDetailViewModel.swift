@@ -16,6 +16,11 @@ class EventViewModel {
     private var event: Event!
     
      // MARK: - Intputs/Outputs
+    struct Input {
+        let didTapShare: Observable<Void>?
+        let didTapCheckin: Observable<Void>?
+    }
+    
     struct Output {
         let imageLink: Driver<String?>
         let title: Driver<String?>
@@ -23,6 +28,8 @@ class EventViewModel {
         let price: Driver<String?>
         let description: Driver<String?>
         let location: Driver<(Double, Double)>
+        let openShareOptions: Driver<Event>?
+        let openCheckinOptions: Driver<Event>?
     }
     
      // MARK: - Life Cycle
@@ -31,7 +38,7 @@ class EventViewModel {
     }
     
     // MARK: - Functions
-    func transform() -> EventViewModel.Output {
+    func transform(input: Input = Input(didTapShare: nil, didTapCheckin: nil)) -> EventViewModel.Output {
         let imageLink = Observable<String?>.create { (observer) -> Disposable in
             observer.onNext(self.event.image)
             return Disposables.create()
@@ -72,7 +79,20 @@ class EventViewModel {
         }
         .asDriver(onErrorJustReturn: (0.0,0.0))
         
-        return Output(imageLink: imageLink, title: title, date: date, price: price, description: description, location: location)
+        let eventObservable = Observable<Event>.create {(observer) -> Disposable in
+            observer.onNext(self.event)
+            return Disposables.create()
+        }
+
+        let openCheckin = input.didTapCheckin?
+            .withLatestFrom(eventObservable)
+            .asDriver(onErrorJustReturn: Event())
+        
+        let openShare = input.didTapShare?
+            .withLatestFrom(eventObservable)
+            .asDriver(onErrorJustReturn: Event())
+        
+        return Output(imageLink: imageLink, title: title, date: date, price: price, description: description, location: location, openShareOptions: openShare, openCheckinOptions: openCheckin)
     }
     
 }
