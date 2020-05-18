@@ -62,6 +62,16 @@ class EventDetailView: UIView, EventDetailViewComponents {
         let label = UILabel(frame: .zero)
         return label
     }()
+    private lazy var shareStackView: UIStackView = {
+        let stack = UIStackView(frame: .zero)
+        stack.axis = .horizontal
+        return stack
+    }()
+    private lazy var datePriceStackView: UIStackView = {
+       let stack = UIStackView(frame: .zero)
+       stack.axis = .vertical
+       return stack
+    }()
     private lazy var dateLabel: UILabel = {
         let label = UILabel(frame: .zero)
         return label
@@ -69,6 +79,12 @@ class EventDetailView: UIView, EventDetailViewComponents {
     private lazy var priceLabel: UILabel = {
         let label = UILabel(frame: .zero)
         return label
+    }()
+    private lazy var checkinButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        button.setTitleColor(.red, for: .normal)
+        button.setTitle("Share", for: .normal)
+        return button
     }()
     private lazy var eventDescriptionTextView: UITextView = {
         let textview = UITextView(frame: .zero)
@@ -100,8 +116,15 @@ extension EventDetailView: CodeView  {
         self.scrollView.addSubview(stackView)
         self.stackView.addArrangedSubview(imageEvent)
         self.stackView.addArrangedSubview(eventTitleLabel)
-        self.stackView.addArrangedSubview(dateLabel)
-        self.stackView.addArrangedSubview(priceLabel)
+  
+        self.datePriceStackView.addArrangedSubview(dateLabel)
+        self.datePriceStackView.addArrangedSubview(priceLabel)
+        
+        self.shareStackView.addArrangedSubview(datePriceStackView)
+        self.shareStackView.addArrangedSubview(checkinButton)
+        self.stackView.addArrangedSubview(shareStackView)
+
+        
         self.stackView.addArrangedSubview(eventDescriptionTextView)
         self.stackView.addArrangedSubview(mapView)
     }
@@ -139,6 +162,10 @@ extension EventDetailView: CodeView  {
         
         mapView.snp.makeConstraints { (make) in
             make.height.equalTo(200)
+        }
+        
+        checkinButton.snp.makeConstraints { (make) in
+            make.width.equalTo(90)
         }
     }
     
