@@ -10,6 +10,7 @@ import Foundation
 
 protocol ViewControllerFactoryProtocol {
     func instantiateEventListViewController() -> EventListViewController
+    func instantiateEventDetailViewController() -> EventDetailViewController
 }
 
 class ViewControllerFactory: ViewControllerFactoryProtocol {

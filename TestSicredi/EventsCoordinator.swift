@@ -41,6 +41,8 @@ class EventsCoordinator: BaseCoordinator {
     }
     
     private func openEvent(event: Event) {
+        let eventDetailVC = self.viewControllerFactory.instantiateEventDetailViewController()
         
+        self.router.push(eventDetailVC, hideBar: false)
     }
 }

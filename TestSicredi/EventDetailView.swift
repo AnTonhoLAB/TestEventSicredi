@@ -41,6 +41,7 @@ extension EventDetailView: CodeView  {
     }
     
     func setupAdditionalConfiguration() {
+        self.backgroundColor = .red
     }
 }
 

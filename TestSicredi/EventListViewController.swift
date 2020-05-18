@@ -29,9 +29,8 @@ class EventListViewController: UpdatableViewController {
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         let input = EventListViewModel.Input(selectedItem: eventListView.eventListTableView.rx.modelSelected(Event.self).asObservable())
         let outputs = viewModel.transform(inputs: input)
         
@@ -59,6 +58,12 @@ class EventListViewController: UpdatableViewController {
                 self.openEvent?(event)
         }
         .disposed(by: disposeBag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    
+        
 
     }
     
