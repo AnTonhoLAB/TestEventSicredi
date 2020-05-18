@@ -25,15 +25,13 @@ class ViewControllerFactory: ViewControllerFactoryProtocol {
     
     func instantiateEventDetailViewController(event: Event) -> EventDetailViewController  {
         let eventDetailView = EventDetailView()
-        let eventDetailViewModel = EventDetailViewModel(event: event)
+        let eventDetailViewModel = EventViewModel(event: event)
         let eventDetailViewController = EventDetailViewController(with: eventDetailView, viewModel: eventDetailViewModel)
         return eventDetailViewController
     }
     
     func instantiateViewModel(event: Event) -> EventViewModel {
-        let eventListRequester = EventListRequester(nil)
-        let eventListUseCase = EventListUsecase(eventListRequester: eventListRequester)
-        let eventViewModel = EventViewModel(eventListUsecaseProtocol: eventListUseCase, event: event)
+        let eventViewModel = EventViewModel(event: event)
         return eventViewModel
     }
 }
