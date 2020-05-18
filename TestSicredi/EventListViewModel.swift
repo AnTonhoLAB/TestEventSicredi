@@ -12,23 +12,22 @@ import RxCocoa
 
 class EventListViewModel {
     
+    // MARK: - Variables
     private var useCase: EventListUsecaseProtocol!
     
-    struct Input {
-//        let didReloadList: Observable<Void>
-    }
-    
+     // MARK: - Intputs/Outputs
     struct Output {
         let networkingStatus: Driver<(NetworkingState<[Event]>, [Event])>
     }
     
+     // MARK: - Life Cycle
     init(eventListUsecaseProtocol: EventListUsecaseProtocol) {
         self.useCase = eventListUsecaseProtocol
     }
     
-    func transform(input: EventListViewModel.Input) -> EventListViewModel.Output {
+    // MARK: - Functions
+    func transform() -> EventListViewModel.Output {
         let listRequest = useCase.getEvents().asDriver(onErrorJustReturn: ((.fail(NetworkingError.fail),[Event]())))
-        
         return Output(networkingStatus: listRequest)
     }
     

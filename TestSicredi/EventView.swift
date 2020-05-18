@@ -11,14 +11,14 @@ import RxSwift
 import RxCocoa
 
 protocol EventViewComponents: UIView {
-    /// To read UI informations
+    var eventImage: Binder<String?> { get }
     var eventDate: Binder<String?> { get }
     var eventTitle: Binder<String?> { get }
-    /// To change UI informations
 }
 
 class EventCellView: UIView, EventViewComponents {
     
+    // MARK: - Public Variables
     lazy var eventImage: Binder<String?> = {
         return self.bannerImageView.rx.loadImage
     }()        
@@ -31,6 +31,7 @@ class EventCellView: UIView, EventViewComponents {
         return self.titleLabel.rx.text
     }()
     
+    // MARK: - Private Variables
     private lazy var bannerImageView: UIImageView = {
         let view = UIImageView(frame: .zero)
         view.clipsToBounds = true
@@ -52,6 +53,7 @@ class EventCellView: UIView, EventViewComponents {
         return label
     }()
     
+    // MARK: - Life Cycle
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         self.clipsToBounds = true
@@ -65,13 +67,14 @@ class EventCellView: UIView, EventViewComponents {
 }
 
 extension EventCellView: CodeView {
-    
+    // MARK: - Add Views
     func buildViewHierarchy() {
         self.addSubview(bannerImageView)
         self.addSubview(dateLabel)
         self.addSubview(titleLabel)
     }
     
+    // MARK: - Constraints Configuration
     func setupConstraints() {
         bannerImageView.snp.makeConstraints { (make) in
             make.top.left.right .equalToSuperview()

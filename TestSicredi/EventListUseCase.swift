@@ -15,12 +15,15 @@ protocol EventListUsecaseProtocol: BaseUseCase {
 
 final class EventListUsecase: EventListUsecaseProtocol {
 
+    // MARK: - Variables
     private var requester: EventListRequesterProtocol!
     
+    // MARK: - Life Cycle
     init(eventListRequester: EventListRequester) {
         self.requester = eventListRequester
     }
-    
+
+    // MARK: - Functions
     func getEvents() -> Observable<(NetworkingState<[Event]>, [Event])> {
         return Observable<(NetworkingState<[Event]>, [Event])>.create{ observer in
             observer.onNext((.loading, [Event]()))

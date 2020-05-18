@@ -12,6 +12,10 @@ import SnapKit
 
 class EventTableViewCell: UITableViewCell {
     
+    // MARK: - Constants
+    private let disposeBag = DisposeBag()
+    
+    // MARK: - Variables
     private lazy var cellView: EventCellView = {
         let view = EventCellView(frame: .zero)
         return view
@@ -23,9 +27,7 @@ class EventTableViewCell: UITableViewCell {
         }
     }
 
-    private let disposeBag = DisposeBag()
-    
-    // Mark: - Init
+    // Mark: - Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(cellView)

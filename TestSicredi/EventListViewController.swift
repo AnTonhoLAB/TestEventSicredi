@@ -12,30 +12,25 @@ import RxCocoa
 
 class EventListViewController: UpdatableViewController {
     
+    // MARK: - Constants
     private let disposeBag: DisposeBag = DisposeBag()
     private var eventListView: EventListViewComponents!
+    
+    // MARK: - Variables
     private var viewModel: EventListViewModel!
     
+    // MARK: - Life Cycle
     init(with view: EventListViewComponents, viewModel: EventListViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.eventListView = view
         self.viewModel = viewModel
     }
     
-    override func loadView() {
-        self.view = eventListView
-    }
-    
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
-    override func viewDidLoad() {
-        
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //        let inputs = EventListViewModel.Input(didReloadList: eventListView.t)
-        let outputs = viewModel.transform(input: EventListViewModel.Input())
+        let outputs = viewModel.transform()
         
         outputs.networkingStatus
             .map({ (state) -> NetworkingState<Any> in
@@ -49,10 +44,14 @@ class EventListViewController: UpdatableViewController {
                 return tuple.1
             })
             .asObservable()
-            .bind(to: eventListView.eventListTableView.rx.items(cellIdentifier: "EventTableViewCell", cellType: EventTableViewCell.self)) { row, model, cell in
-
-                cell.setup(viewModel: EventViewModel(eventListUsecaseProtocol: EventListUsecase(eventListRequester: EventListRequester(nil)), event: model))
+            .bind(to: eventListView.eventListTableView.rx.items(cellIdentifier: "EventTableViewCell", cellType: EventTableViewCell.self)) { row, event, cell in
+                let factory = ViewControllerFactory()
+                cell.setup(viewModel: factory.instantiateViewModel(event: event))
             }.disposed(by: disposeBag)
     }
+    
+    // MARK: - Functions
+    override func loadView() {
+        self.view = eventListView
+    }
 }
-//

@@ -11,20 +11,25 @@ import RxSwift
 import RxCocoa
 
 class EventViewModel {
+    
+    // MARK: - Variables
     private var eventListUsecaseProtocol: EventListUsecaseProtocol!
     private var event: Event!
     
+    // MARK: - Intputs/Outputs
     struct Output {
         let title: Driver<String?>
         let date: Driver<String?>
         let imageLink: Driver<String?>
     }
     
+    // MARK: - Life Cycle
     init(eventListUsecaseProtocol: EventListUsecaseProtocol, event: Event) {
         self.event = event
         self.eventListUsecaseProtocol = eventListUsecaseProtocol
     }
     
+    // MARK: - Functions
     func transform() -> EventViewModel.Output {
         let title = Observable<String?>.create { (observer) -> Disposable in
             observer.onNext(self.event.title)

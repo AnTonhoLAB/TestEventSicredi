@@ -10,11 +10,12 @@ import UIKit
 import SnapKit
 
 protocol EventListViewComponents: UIView {
-    /// To read UI informations
     var eventListTableView: UITableView { get }
 }
 
 class EventListView: UIView, EventListViewComponents {
+    
+    // MARK: - Public Variables
     lazy var eventListTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: "EventTableViewCell")
@@ -36,10 +37,13 @@ class EventListView: UIView, EventListViewComponents {
 }
 
 extension EventListView: CodeView  {
+
+    // MARK: - Constraints Configuration
     func buildViewHierarchy() {
         self.addSubview(eventListTableView)
     }
     
+    // MARK: - Constraints Configuration
     func setupConstraints() {
         eventListTableView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
